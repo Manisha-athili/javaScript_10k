@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Day 01 </h1>
+
+    <ol>
+        <li>
+        Write a JavaScript script that compares two variables using different comparison operators (==, ===, !=, !==, >, <, >=, <=) and prints the results.
+        </li>
+        <li>
+         Expand the script to include a ternary operation that checks if a user is an adult (18+) or a minor.
+        </li>
+        <li>
+         Grade Classification: Declare a variable score and set it to a value between 0 and 100. Use nested ternary operators to classify the score into grades: A (>= 90), B (>= 75), C (>= 60), D (>= 45), and F (below 45). Log the grade.
+        </li>
+        <li>
+            //  Temperature Check: Declare a variable temperature and use nested ternary operators to categorize it as "Hot" (above 30), "Warm" (20-30), "Cool" (10-19), and "Cold" (below 10). Log the result.
+        </li>
+        <li>
+            //  Age Group: Declare a variable age and use the ternary operator to classify the age into "Child" (0-12), "Teen" (13-19), "Adult" (20-64), and "Senior" (65 and above). Log the result</p>
+        </li>
+        <li>
+            <p>
+                // Write a JavaScript script that uses the ternary operator to determine if a number is even or odd.  
+            </p>
+
+        </li>
+    </ol>
+
+
+        
+    <script>
+        var num1 = 70;
+        var num2 = "hi";
+        console.log(" comparison with int and string ")
+        console.log(num1==num2);
+        console.log(num1===num2);
+        console.log(num1!=num2);
+        console.log(num1!==num2);
+        console.log(num1<num2);
+        console.log(num1>num2);
+        console.log(num1>=num2);
+        console.log(num1<=num2);
+
+        var num1 = 30;
+        var num2 = 10;
+        console.log(" comparison with int and int")
+        console.log(num1==num2);
+        console.log(num1===num2);
+        console.log(num1!=num2);
+        console.log(num1!==num2);
+        console.log(num1<num2);
+        console.log(num1>num2);
+        console.log(num1>=num2);
+        console.log(num1<=num2);
+
+
+        var score = prompt("enter the Score to find Grade :");
+        score>=90?
+        console.log("Your Grade A :",score):
+        score>= 75?console.log("Your Grade B :",score):
+        score>= 60?console.log("Your Grade C :",score):
+        score>= 45?console.log("Your Grade D :",score):
+        console.log("Your Grade F :",score);
+
+
+
+
+        var temperature = prompt("Enter a temperature");
+        temperature>30?console.log("Temperature is Hot"):temperature>=20?console.log("Temperature is warm"):temperature>=10?console.log("Temperature is cool"):console.log("Temperature is cold");
+        
+
+        let age=prompt("enter your age");
+        console.log(age);
+        age<=12?console.log("you are a child"):age<=19?console.log("you are a teen"):age<=64?console.log("you are a adult"):console.log("you are a Senior");
+
+        let number = prompt('enter a number to find even or odd');
+        number%2==0?console.log(number," is even number"):console.log(number , " is odd numder");
+
+
+    </script>
+        
+    
+</body>
+</html>
