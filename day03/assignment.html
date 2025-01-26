@@ -1,98 +1,198 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JavaScript Operations</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: radial-gradient( circle 382px at 50% 50.2%,  rgba(73,76,212,1) 0.1%, rgba(3,1,50,1) 100.2% ); /* Blue gradient */
+            color: #ffffff;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-image: linear-gradient( 178.7deg,  rgba(126,184,253,1) 5.6%, rgba(2,71,157,1) 95.3% ); /* Blue gradient */
+            color: white;
+            font-size: 2.5rem;
+            margin: 0;
+            border-bottom: 4px solid #3b6a9f;
+        }
+
+        ol {
+            background: linear-gradient(135deg, #6fa3ef, #3b6a9f); /* Blue gradient */
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 30px auto;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: linear-gradient(90deg, #3b6a9f, #6fa3ef); /* Blue gradient */
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #3b6a9f, #6fa3ef); /* Blue gradient */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .result {
+            margin-top: 10px;
+            padding: 15px;
+            background-image: linear-gradient( 104.1deg,  rgba(0,61,100,1) 13.6%, rgba(47,127,164,1) 49.4%, rgba(30,198,198,1) 93.3% ); /* Blue gradient */
+            border: 1px solid white;
+            border-radius: 10px;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Day 01 </h1>
+    <h1>Day 03 - JavaScript Operations</h1>
 
     <ol>
         <li>
-        Write a JavaScript script that compares two variables using different comparison operators (==, ===, !=, !==, >, <, >=, <=) and prints the results.
+            <button onclick="toggleResult('comparisonResult', compareVariables)">Compare Two Variables</button>
+            <div id="comparisonResult" class="result hidden"></div>
         </li>
-        <li>
-         Expand the script to include a ternary operation that checks if a user is an adult (18+) or a minor.
-        </li>
-        <li>
-         Grade Classification: Declare a variable score and set it to a value between 0 and 100. Use nested ternary operators to classify the score into grades: A (>= 90), B (>= 75), C (>= 60), D (>= 45), and F (below 45). Log the grade.
-        </li>
-        <li>
-            //  Temperature Check: Declare a variable temperature and use nested ternary operators to categorize it as "Hot" (above 30), "Warm" (20-30), "Cool" (10-19), and "Cold" (below 10). Log the result.
-        </li>
-        <li>
-            //  Age Group: Declare a variable age and use the ternary operator to classify the age into "Child" (0-12), "Teen" (13-19), "Adult" (20-64), and "Senior" (65 and above). Log the result</p>
-        </li>
-        <li>
-            <p>
-                // Write a JavaScript script that uses the ternary operator to determine if a number is even or odd.  
-            </p>
 
+        <li>
+            <button onclick="toggleResult('ageResult', checkAge)">Check if Adult or Minor</button>
+            <div id="ageResult" class="result hidden"></div>
+        </li>
+
+        <li>
+            <button onclick="toggleResult('gradeResult', getGrade)">Classify Grade</button>
+            <div id="gradeResult" class="result hidden"></div>
+        </li>
+
+        <li>
+            <button onclick="toggleResult('temperatureResult', checkTemperature)">Temperature Check</button>
+            <div id="temperatureResult" class="result hidden"></div>
+        </li>
+
+        <li>
+            <button onclick="toggleResult('ageGroupResult', ageGroup)">Classify Age Group</button>
+            <div id="ageGroupResult" class="result hidden"></div>
+        </li>
+
+        <li>
+            <button onclick="toggleResult('evenOddResult', checkEvenOdd)">Check Even or Odd</button>
+            <div id="evenOddResult" class="result hidden"></div>
         </li>
     </ol>
 
-
-        
     <script>
-        var num1 = 70;
-        var num2 = "hi";
-        console.log(" comparison with int and string ")
-        console.log(num1==num2);
-        console.log(num1===num2);
-        console.log(num1!=num2);
-        console.log(num1!==num2);
-        console.log(num1<num2);
-        console.log(num1>num2);
-        console.log(num1>=num2);
-        console.log(num1<=num2);
+        function toggleResult(resultId, action) {
+            const resultDiv = document.getElementById(resultId);
 
-        var num1 = 30;
-        var num2 = 10;
-        console.log("comparison with int and int")
-        console.log(num1==num2);
-        console.log(num1===num2);
-        console.log(num1!=num2);
-        console.log(num1!==num2);
-        console.log(num1<num2);
-        console.log(num1>num2);
-        console.log(num1>=num2);
-        console.log(num1<=num2);
+            if (!resultDiv.classList.contains('hidden')) {
+                resultDiv.classList.add('hidden');
+                resultDiv.innerHTML = '';
+            } else {
+                action();
+            }
+        }
 
-        // Expand the script to include a ternary operation that checks if a user is an adult (18+) or a minor.
-        var user_age= prompt("Enter your age to know adult or minor:")
-        user_age>18?console.log("adult"):console.log("minor")
+        function compareVariables() {
+            const num1 = 70;
+            const num2 = "hi";
 
+            const comparisonResult = `Comparison with int and string: <br>
+                == : ${num1 == num2} <br>
+                === : ${num1 === num2} <br>
+                != : ${num1 != num2} <br>
+                !== : ${num1 !== num2} <br>
+                < : ${num1 < num2} <br>
+                > : ${num1 > num2} <br>
+                >= : ${num1 >= num2} <br>
+                <= : ${num1 <= num2}
+            `;
 
+            const resultDiv = document.getElementById('comparisonResult');
+            resultDiv.innerHTML = comparisonResult;
+            resultDiv.classList.remove('hidden');
+        }
 
+        function checkAge() {
+            const userAge = prompt("Enter your age:");
+            const result = userAge >= 18 ? "You are an adult." : "You are a minor.";
 
-        var score = prompt("enter the Score to find Grade :")
-        score>=90?
-        console.log("Your Grade A :",score):
-        score>= 75?console.log("Your Grade B :",score):
-        score>= 60?console.log("Your Grade C :",score):
-        score>= 45?console.log("Your Grade D :",score):
-        console.log("Your Grade F :",score);
+            const resultDiv = document.getElementById('ageResult');
+            resultDiv.innerText = result;
+            resultDiv.classList.remove('hidden');
+        }
 
+        function getGrade() {
+            const score = prompt("Enter your score (0-100):");
+            const grade = score >= 90 ? "A" :
+                score >= 75 ? "B" :
+                score >= 60 ? "C" :
+                score >= 45 ? "D" : "F";
 
+            const resultDiv = document.getElementById('gradeResult');
+            resultDiv.innerText = `Your grade is ${grade}.`;
+            resultDiv.classList.remove('hidden');
+        }
 
+        function checkTemperature() {
+            const temperature = prompt("Enter the temperature:");
+            const category = temperature > 30 ? "Hot" :
+                temperature >= 20 ? "Warm" :
+                temperature >= 10 ? "Cool" : "Cold";
 
-        var temperature = prompt("Enter a temperature");
-        temperature>30?console.log("Temperature is Hot"):temperature>=20?console.log("Temperature is warm"):temperature>=10?console.log("Temperature is cool"):console.log("Temperature is cold");
-        
+            const resultDiv = document.getElementById('temperatureResult');
+            resultDiv.innerText = `The temperature is ${category}.`;
+            resultDiv.classList.remove('hidden');
+        }
 
-        let age=prompt("enter your age");
-        console.log(age);
-        age<=12?console.log("you are a child"):age<=19?console.log("you are a teen"):age<=64?console.log("you are a adult"):console.log("you are a Senior");
+        function ageGroup() {
+            const age = prompt("Enter your age:");
+            const group = age <= 12 ? "Child" :
+                age <= 19 ? "Teen" :
+                age <= 64 ? "Adult" : "Senior";
 
-        let number = prompt('enter a number to find even or odd');
-        number%2==0?console.log(number," is even number"):console.log(number , " is odd numder");
+            const resultDiv = document.getElementById('ageGroupResult');
+            resultDiv.innerText = `You are a ${group}.`;
+            resultDiv.classList.remove('hidden');
+        }
 
+        function checkEvenOdd() {
+            const number = prompt("Enter a number:");
+            const result = number % 2 === 0 ? "Even" : "Odd";
 
+            const resultDiv = document.getElementById('evenOddResult');
+            resultDiv.innerText = `The number is ${result}.`;
+            resultDiv.classList.remove('hidden');
+        }
     </script>
-        
-    
+
 </body>
 </html>

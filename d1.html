@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operations</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #161b22;
+            padding: 20px 10px;
+            text-align: center;
+            border-bottom: 2px solid #58a6ff;
+        }
+
+        header h1 {
+            color: #58a6ff;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        ol {
+            background-color: #21262d;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        }
+
+        li {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #30363d;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            padding: 12px 25px;
+            margin-top: 10px;
+            background-color: #58a6ff;
+            color: #0d1117;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #1f6feb;
+            transform: scale(1.05);
+        }
+
+        .result {
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #161b22;
+            border: 2px solid #58a6ff;
+            border-radius: 10px;
+            color: #a5d6ff;
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #161b22;
+            color: #a5d6ff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Interactive JavaScript Operations</h1>
+    </header>
+
+    <ol>
+        <li>
+            <p>
+                <strong>Compare Two Variables:</strong> Variable comparison involves evaluating the relationship between two variables using comparison operators. These operators help determine equality, inequality, or relative magnitude.
+            </p>
+            <p>
+                Here are the operators used in this script:
+                <ul>
+                    <li><code>==</code>: Compares values for equality, ignoring type.</li>
+                    <li><code>===</code>: Compares values and types for strict equality.</li>
+                    <li><code>!=</code>: Checks if values are not equal, ignoring type.</li>
+                    <li><code>!==</code>: Checks if values or types are not equal.</li>
+                    <li><code>&lt;</code>: Checks if the left value is less than the right.</li>
+                    <li><code>&gt;</code>: Checks if the left value is greater than the right.</li>
+                    <li><code>&lt;=</code>: Checks if the left value is less than or equal to the right.</li>
+                    <li><code>&gt;=</code>: Checks if the left value is greater than or equal to the right.</li>
+                </ul>
+            </p>
+            <button onclick="toggleResult('comparisonResult', compareVariables)">Compare Two Variables</button>
+            <div id="comparisonResult" class="result hidden"></div>
+        </li>
+
+        <!-- Other operations remain unchanged -->
+
+    </ol>
+
+    <script>
+        function toggleResult(divId, action) {
+            const resultDiv = document.getElementById(divId);
+            if (!resultDiv.classList.contains('hidden')) {
+                resultDiv.classList.add('hidden');
+            } else {
+                action();
+            }
+        }
+
+        function compareVariables() {
+            const num1 = 70;
+            const num2 = "hi";
+
+            const comparisonResult = `
+                Comparison with int and string: <br>
+                == : ${num1 == num2} <br>
+                === : ${num1 === num2} <br>
+                != : ${num1 != num2} <br>
+                !== : ${num1 !== num2} <br>
+                < : ${num1 < num2} <br>
+                > : ${num1 > num2} <br>
+                >= : ${num1 >= num2} <br>
+                <= : ${num1 <= num2}
+            `;
+
+            const resultDiv = document.getElementById('comparisonResult');
+            resultDiv.innerHTML = comparisonResult;
+            resultDiv.classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
