@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Operations</title>
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -75,35 +83,35 @@
 </head>
 <body>
 
-    <h1>Day 03 - JavaScript Operations</h1>
+    <h1  data-aos="flip-left" data-aos-delay="200" data-aos-duration="2000" >Day 03 - JavaScript Operations</h1>
 
-    <ol>
-        <li>
+    <ol data-aos="fade-right">
+        <li data-aos="zoom-in-left" data-aos-delay="300">
             <button onclick="toggleResult('comparisonResult', compareVariables)">Compare Two Variables</button>
             <div id="comparisonResult" class="result hidden"></div>
         </li>
 
-        <li>
+        <li data-aos="zoom-in-left" data-aos-delay="400">
             <button onclick="toggleResult('ageResult', checkAge)">Check if Adult or Minor</button>
             <div id="ageResult" class="result hidden"></div>
         </li>
 
-        <li>
+        <li data-aos="fade-right" data-aos-delay="500">
             <button onclick="toggleResult('gradeResult', getGrade)">Classify Grade</button>
             <div id="gradeResult" class="result hidden"></div>
         </li>
 
-        <li>
+        <li  data-aos="zoom-in" data-aos-delay="600">
             <button onclick="toggleResult('temperatureResult', checkTemperature)">Temperature Check</button>
             <div id="temperatureResult" class="result hidden"></div>
         </li>
 
-        <li>
+        <li data-aos="flip-left" data-aos-delay="700">
             <button onclick="toggleResult('ageGroupResult', ageGroup)">Classify Age Group</button>
             <div id="ageGroupResult" class="result hidden"></div>
         </li>
 
-        <li>
+        <li  data-aos="zoom-in" data-aos-delay="1000">
             <button onclick="toggleResult('evenOddResult', checkEvenOdd)">Check Even or Odd</button>
             <div id="evenOddResult" class="result hidden"></div>
         </li>
@@ -193,6 +201,10 @@
             resultDiv.classList.remove('hidden');
         }
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 
 </body>
 </html>
