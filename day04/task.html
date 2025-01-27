@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--
+
+
+ -->
+    
+
+    <script>
+        // task 01 : resturant
+        // var dish = prompt("enter dish name::");
+        
+        var dish = "Fried Rice";
+
+         switch(dish){
+            case "Biriyani": console.log(dish,"499");
+            break;
+            case "shawarma": console.log(dish,"149");
+            break;
+            case "Fried Rice": console.log(dish,"199");
+            break;
+            case "veg pula": console.log(dish,"299");
+            break;
+            default: console.log(light,"Unavailble dish");
+        }
+
+        // task 02  
+        var num1 = prompt("enter num1 : ");
+        var num2 = prompt("enter num2 : ");
+        var Operation = prompt("enter operator :");
+        var result ;
+
+        switch(Operation){
+            case "+":result = num1 + num2; console.log(result);
+            break;
+            case "-":result = num1 - num2; console.log(result);
+            break;
+            case "*":result = num1 * num2; console.log(result);
+            break;
+            case "/":result = num1 / num2; console.log(result);
+            break;
+            default: console.log("entered invailed operator");
+        }
+
+  // task 03  Task 1: Day of the Week Message
+            // Scenario: Develop a webpage that displays a special message based on the current day of the week.
+
+            // “Start your week strong!” for Monday.
+            // “Keep going!” for Tuesday.
+            // “Halfway there!” for Wednesday.
+            // “Almost the weekend!” for Thursday.
+            // “Happy Friday!” for Friday.
+            // “Enjoy your weekend!” for Saturday and Sunday.
+
+            // Task:
+            // Get the current day of the week.
+            // Display the corresponding message.
+
+        var day = prompt("enter the day : ");
+        console.log(" Day of the Week Message")
+
+        switch(day){
+            case "monday": console.log('Start your week strong!');
+            break;
+            case "tuesday":console.log("Keep going!");
+            break;
+            case "wednesday": console.log("Halfway there!");
+            break;
+            case "thursday": console.log("Almost the weekend!");
+            break;
+            case "friday": console.log("Happy Friday!");
+            break;
+            case "saturday" && "sunday": console.log("Enjoy your weekend!");
+            break;
+            default: console.log("entered invailed operator");
+        }
+
+//         // Task 2: Discount Calculator
+// Scenario: Calculate the discount based on the total purchase amount.
+
+// “No discount” if the amount is less than $50.
+// “5% discount” if the amount is between $50 and $100.
+// “10% discount” if the amount is between $101 and $200.
+// “15% discount” if the amount is above $200.
+// Task:
+// Prompt the user to enter the total purchase amount.
+// Display the discount percentage.
+
+        console.log("Discount Calculator");
+        var amount =+ prompt("enter your amount to find discount: ");
+
+        if(amount>200){
+            console.log("15% discount");
+        }else if(amount>101){
+            console.log("10% discount");
+        }else if(amount>50){
+            console.log("5% discount");
+        }else{
+            console.log("0% discount");
+        }
+
+        
+
+        
+    </script>
+</body>
+</html>

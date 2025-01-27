@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: #004953;
+            color: aliceblue;
+        }
+    </style>
+
+</head>
+<body>
+<h1>Conditional statements::</h1>
+<ol>
+    <li>if(conditons) Statement: <br></li>
+    <li>
+    <b>if else Statements::</b>
+    <pre>
+    var a=10
+    if(a==10){
+        console.log(a,"it is true");
+    }
+    </pre>
+</li>
+<li>
+     <b>if-else statement ::</b>
+var b = 20; <br>
+    if(a==b){ <br>
+        console.log("it is true"); <br>
+    } <br>
+    else{  <br>
+        console.log("it is flase");  <br>
+    }  <br>
+</li>
+<li>
+<b>if- else-if</b>
+<pre>
+var tem = prompt("enter a number :");
+if(tem<=10){
+    console.log(tem, " is cold");
+}else if(tem<=20){
+    console.log(tem," is cool")
+}else if(tem<=30){
+    console.log(tem," is warm")
+}else if(tem<=45){
+    console.log(tem," is hot")
+}</pre>
+</li>
+
+<li><b>Switch::</b> block of code will excute when condition is matched Strict equall to === with case</li>
+
+<pre>
+switch(light){
+    case "red": console.log(light,"Stop");
+    break;
+    case "yellow": console.log(light,"get ready");
+    break;
+    case "green": console.log(light,"Go");
+    break;
+    default: console.log(light,"no match");
+}
+    
+</pre>
+    </ol>
+    
+
+    <script>
+        /* Conditional Statements::  */
+
+        // if statement::
+
+        var a=10;
+            if(a==10){
+                console.log(a,"it is true");
+            }
+        var a=10;
+
+        // if-else statement ::
+        var b = 20;
+            if(a==b){
+                console.log("it is true");
+            }
+            else{
+                console.log("it is false");
+            }
+
+        // .if--else-if statements::
+
+            // var tem = prompt("enter a number :");
+            var tem = 49;
+            if(tem<=10){
+                console.log(tem, " is cold");
+            }else if(tem<=20){
+                console.log(tem," is cool")
+            }else if(tem<=30){
+                console.log(tem," is warm")
+            }else{
+                console.log(tem," is hot")
+            }    
+
+        // Switch:: 
+
+        var light ="yellow";
+
+        switch(light){
+            case "red": console.log(light,"Stop");
+            case "yellow": console.log(light,"get ready");
+            case "green": console.log(light,"Go");
+            default: console.log(light,"no match");
+        }
+        console.log("once it is true all the code is excuted to privent we use BREAK keyword");
+        // break :: it will terminate a block of code
+        
+        var light ="yellow";
+        switch(light){
+            case "red": console.log(light,"Stop");
+            break;
+            case "yellow": console.log(light,"get ready");
+            break;
+            case "green": console.log(light,"Go");
+            break;
+            default: console.log(light,"no match");
+        }
+        
+
+    </script>
+</body>
+</html>

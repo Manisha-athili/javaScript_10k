@@ -136,6 +136,7 @@ console.log("  " / "hello");
 
 
 // types ::: implicit conversions and explicit conversions...
+// implicit conversions : by broswer
 
 // explicit conversions: 
 // String(a)
@@ -143,6 +144,8 @@ console.log("  " / "hello");
 // Number(a)
 
 // input from user:: prompt("enter a number")
+
+// var a=+prompt("enter") --> only takes number ..
 
 /**
  * turethy values::
