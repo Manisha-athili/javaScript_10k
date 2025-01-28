@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Loops in js :: </h1>
+    <p>loops in js are control structures that allows you to repeat a block of code multiple times until a specific condition is true.</p>
+    <h3>Types in loops:</h3>
+    <ol>
+<li>For loop
+    <pre>
+        for(i=1;i<=100;i++){
+            console.log(i,"im sorry");
+        }
+        i value   //condtion     //block      //updation
+        1            true          1            1+1 = 2
+        2            true           2           2+1 = 3
+        3            true           3           3+1 = 4
+        4            true           4           4+1 = 5
+        5            true           5           5+1 = 6
+        10           true           5           5+1 = 6
+        11          true           5           5+1 = 6
+    </pre>
+    <h6>loop 2</h6>
+    <pre>
+        for(i=1;i<=i*2;i++){
+            console.log(i);
+        }
+        i value   //condtion     //block      //updation
+        1           1<2 -- t  
+    </pre>
+    <h6>loop 3</h6>
+    <pre>
+        for(i=1;i<10;i=i+2){
+            console.log(i);
+            i=i-2
+            i++
+        }
+        i value   //condtion     //block      //updation
+        1           t           1; -1;0        2
+        2           t           2; 0 ;1        3
+        3           t           3; 1;2        4
+        4           t           4; 2;3        5
+        5           t           5; 3;4        6
+    </pre>
+    <h4>loop 4 </h4>
+    <pre>
+        for(i=1;i<12;i++){
+            i-=2;
+            console.log(++i);
+        }
+        i value   //condtion     //block      //updation
+        1           t               6
+
+    </pre>
+    <h4>loop 5</h4>
+    <pre>
+        for(i=-3;i<=0;i*2){
+            console.log(i)
+        }
+        i value   //condtion     //block      //updation
+        -3          t               -3          -6
+        -6          t               -3         -12
+        -12         t               -3           -24
+        infinate
+
+    </pre>
+
+    <h4>loop 6</h4>
+    <pre>
+        count =0;
+        for(i=1;i<=5;i++){
+            count= count+(i*2);
+        }
+        console.log(count);
+        <!-- 30 -->
+
+        count   i value   //condtion      count = //block      //updation
+        0         1         t             count =    2           2
+        2         2         t             count =    6           3
+        6         3         t             count =   12           4
+        12        4         t             count =   20           5
+        20        5         t             count =   30           6
+        30        6         f
+
+    </pre>
+
+    
+</li>
+        <li>while loop</li>
+        <li>do while loop</li>
+        <li>for in loop</li>
+        <li>for of looph</li>
+    </ol>
+
+    
+
+
+    <script>
+
+    </script>
+</body>
+</html>
