@@ -3,21 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task App</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient( 69.5deg,  rgba(40,48,68,1) 2.3%, rgba(1,179,201,1) 97.6% );
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            /* background: white; */
+            background-image: linear-gradient( 110.9deg,  rgba(44,221,239,1) 1.1%, rgba(14,191,210,1) 37.6%, rgba(8,127,140,1) 99.2% );
+            padding: 20px;
+            margin: 50px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .result-container {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-    
-
+    <div class="container">
+        <input type="text" placeholder="Enter a name:" id="txt_name" required>
+        <button onclick="task1()">Reverse Text</button>
+        <div id="result" class="result-container"></div>
+        <button onclick="task2()">Analyze Numbers</button>
+        <div id="result2" class="result-container"></div>
+        <div id="result3" class="result-container"></div>
+        <div id="result4" class="result-container"></div>
+        <div id="result5" class="result-container"></div>
+        <div id="result6" class="result-container"></div>
+    </div>
     <script>
+        function task1() {
+            let resultDiv = document.getElementById('result');
+            let value = document.getElementById('txt_name').value;
+            resultDiv.innerHTML = value.split('').reverse().join('');
+        }
+        function task2() {
+            let numbers = [23, 54, 67, 64, 46, 95, 98];
+            let evens = numbers.filter(n => n % 2 === 0);
+            let odds = numbers.filter(n => n % 2 !== 0);
+            let evenSum = evens.reduce((sum, num) => sum + num, 0);
+            let oddSum = odds.reduce((sum, num) => sum + num, 0);
 
-// reverse a string input: hello output : olleh
-// find a even numbers  and odd nunmbers in an array - [23,54,67,64,46,95,98] and also  find evensum greater or oddsum greater
-debugger
-        let str = "hello";
-        console.log(str.length);
-        for(let i=str.length-1;i>=1;i--){
-            alert(str[i])
-            console.log(str[i]);
+            document.getElementById('result2').innerHTML = 'Even Numbers: ' + evens.join(', ');
+            document.getElementById('result3').innerHTML = 'Odd Numbers: ' + odds.join(', ');
+            document.getElementById('result4').innerHTML = 'Even Sum: ' + evenSum;
+            document.getElementById('result5').innerHTML = 'Odd Sum: ' + oddSum;
+            document.getElementById('result6').innerHTML = evenSum > oddSum ? 'Even sum is greater' : evenSum === oddSum ? 'Both are equal' : 'Odd sum is greater';
         }
     </script>
 </body>
