@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <style>
+        h1{
+            font-size: 1rem;        }
+        body{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            background-color: #0093E9;
+            background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+        }
+        .container{
+            width: 60%;
+            border: 2px solid black;
+            padding: 3%;
+            background-image: radial-gradient( circle farthest-corner at 3.7% 49.8%,  rgba(143,232,255,1) 21.9%, rgba(209,243,251,1) 52.9% );
+            
+        }
+        button {background-image: linear-gradient(to right, #757F9A 0%, #D7DDE8  51%, #757F9A  100%)}
+        button {
+            margin: 10px;
+            padding:3% 5%;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: rgb(0, 0, 0);            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .result {
+            margin-top: 10px;
+            padding: 15px;
+            background-image: linear-gradient( 104.1deg,  rgba(0,61,100,1) 13.6%, rgba(47,127,164,1) 49.4%, rgba(30,198,198,1) 93.3% ); /* Blue gradient */
+            border: 1px solid white;
+            border-radius: 10px;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+        .item{
+            text-align: center;
+            border: 2px solid black;
+            padding:3% 5%;
+            margin: 5%;
+        }
+        .item:hover{
+            background-image: linear-gradient( 104.1deg,  rgba(0,61,100,1) 13.6%, rgba(47,127,164,1) 49.4%, rgba(30,198,198,1) 93.3% );
+        }
+        input{
+            width: 80%;
+        }
+
+        .hidden {
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- task 01 -->
+        <div class="item animate__animated animate__bounce">
+            <h1>Print Even Numbers from 1 to 20</h1>
+            <button onclick="toggleEven('even_num',showEven)" >show</button>
+            <div id="even_num" class="hidden result" ></div>
+        </div>
+         <!-- task  02-->
+        <div class="item animate__animated animate__bounce">
+            <h1>Print Multiples of 5 up to 50</h1>
+            <button onclick="togglemultiples('mulit_num',showMulti)">show</button>
+            <div id="mulit_num" class="hidden result" ></div>
+        </div>
+         <!-- task 03 -->
+        <div class="item animate__animated animate__bounce">
+            <h1>calculates the factorial</h1>
+            <input type="number" id="factid" placeholder="Enter a number">
+            <button onclick="toggleFact('fact_num',showFact)">Calculate</button>
+            <div id="fact_num" class="hidden result" ></div>
+        </div>
+         <!-- task 04 -->
+        <div class="item animate__animated animate__bounce">
+            <h1>multiplication table </h1>
+            <button onclick="toggletable('tables',show_tables)">show</button>
+            <div id="tables" class="hidden result" ></div>
+        </div>
+        <!-- task 05 -->
+        <div class="item animate__animated animate__bounce">
+            <h1>alphabet from A to Z</h1>
+            <button onclick="task05('cap',showA)">show</button>
+            <div id="cap" class="result hidden" ></div>
+        </div>
+        <!-- task 06 -->
+        <div class="item animate__animated animate__bounce">
+            <h1>alphabet from a to z</h1>
+            <button onclick="task06('small',showa)" >show</button>
+            <div id="small" class="result hidden" ></div>
+        </div>
+       
+    </div>
+
+  
+
+
+
+    <script>
+
+
+//      Task 1: Print Even Numbers from 1 to 20
+//          Scenario: Write JavaScript code that prints all even numbers from 1 to 20.
+//          Instructions:
+//          Use a for loop to iterate from 1 to 20.
+//          Use an if statement to check if a number is even and print it.
+
+           
+
+// Task 2: Print Multiples of 5 up to 50
+//          Scenario: Write JavaScript code that prints all multiples of 5 up to 50.
+//          Instructions:
+//          Use a for loop to iterate from 1 to 50.
+//          Use an if statement to check if a number is a multiple of 5 and print it.
+
+           
+
+// Task 3: Create a JavaScript program that calculates the factorial of a given number using a for loop.
+//          Instructions:
+//          Use a for loop to multiplication the given 
+//          Take prompt from the user
+//          hint: take count value as 1;
+//          5*4*3*2*1
+
+           
+
+// Task 5:Write a JavaScript script that uses nested loops to 
+//      print a multiplication table for numbers 1 through 5.           
+//      Instructions:
+//      use for loop
+//      use nested loop
+        
+         
+
+// Task 4: Print the Alphabet
+//         Scenario: Write JavaScript code that prints the alphabet from A to Z.
+//         Instructions:
+//         Use a for loop to iterate through the ASCII values of the letters A to Z.
+//         Convert the ASCII values to characters and print them.
+//         Hint - console.log(String.fromCharCode(i));
+
+          
+// TASK 01 --->
+           function toggleEven(resultId,action){
+            const resultDiv = document.getElementById(resultId);
+            if(!resultDiv.classList.contains('hidden')){
+                resultDiv.classList.add('hidden');
+                resultDiv.innerHTML='';
+            }
+            else{
+                action();
+            }
+           }
+           function showEven(){
+            // prompt("hi");
+            const resultDiv = document.getElementById('even_num');
+            resultDiv.innerHTML = "";
+             for(i = 1; i<=20; i++){
+                if(i%2==0){
+                    // console.log(i,"even number");
+                    resultDiv.innerHTML +=  i + ", ";
+                    
+                }
+            }
+            // resultDiv.innerHTML +=  "hi";
+            resultDiv.classList.remove('hidden');
+           }
+// TASK 02---->  
+        function togglemultiples(resultId,action){
+            const resultDiv = document.getElementById(resultId);
+            // resultDiv.innerHTML="";
+            if(!resultDiv.classList.contains('hidden')){
+                resultDiv.classList.add('hidden');
+            }else{
+                action();
+            }
+        }
+        function showMulti(){
+            // prompt("weclome");
+            const resultDiv= document.getElementById('mulit_num');
+            resultDiv.innerHTML="";
+            for(i=1;i<=50;i++){
+                if(i%5==0){
+                    // console.log(i," is multiples of 5");
+                    resultDiv.innerHTML += i + " ";
+                }
+            }
+            resultDiv.classList.remove('hidden');
+        }
+// TASK 03--->
+        function toggleFact(resultId,action){
+            const resultDiv = document.getElementById('fact_num');
+            if(!resultDiv.classList.contains('hidden')){
+                resultDiv.classList.add('hidden');
+            }
+            else{
+                action();
+            }
+            // fact 5 = 5! = 5*4*3*2*1  
+        }
+        function showFact(){
+            var input = document.getElementById('factid').value;
+            // alert(input)
+            var output = document.getElementById('fact_num');
+            output.innerHTML="";
+            // alert(input);
+            // fact =+ prompt("enter number::");
+            var fact=1;
+           for(i=input;i>0;i--){
+            // console.log(i);
+             fact *= i;
+           }
+        //    alert(fact);
+        output.innerHTML = `Factorial of ${input} is ${fact}`;
+           output.classList.remove('hidden')           
+        }
+// TASK 04
+        function toggletable(resultId,action){
+            const div = document.getElementById(resultId);
+            if(!div.classList.contains('hidden')){
+                div.classList.add('hidden');
+            }else{
+                action();
+            }
+        }
+        function show_tables(){
+            const div = document.getElementById('tables');
+            div.innerHTML='';
+            // alert("hi");
+            for(i = 1;i<=5; i++){
+                for(j=1;j<=10; j++){
+                div.innerHTML += `${i} * ${j} = ${i * j}<br>`;
+                // (i," * ",j, " = ", i*j);
+            }
+            div.innerHTML+='<br>';
+           } 
+           div.classList.remove('hidden')                                           
+        }
+// TASK 05
+
+        function task05(resultid,action){
+            // alert("hi");
+            const resultdiv = document.getElementById(resultid);
+
+            if(!resultdiv.classList.contains('hidden')){
+                resultdiv.classList.add('hidden');
+            }else{
+                action();
+            }
+            
+        //     const div = document.getElementById('cap');
+        //     let content ="";
+        //    for(i=65;i<=90;i++){
+        //     content  += String.fromCharCode(i)+' '
+        //    }
+        // //    console.log(sum);
+        //   div.innerHTML+= content;
+        }
+        function showA(){
+            const resultdiv = document.getElementById('cap');
+            resultdiv.innerHTML="";
+            let content ="";
+           for(i=65;i<=90;i++){
+            content  += String.fromCharCode(i)+' '
+           }
+        //    console.log(sum);
+          resultdiv.innerHTML+= content;
+          resultdiv.classList.remove('hidden');
+        }
+
+// TASK 05
+
+
+function task06(resultid,action){
+            // alert("hi");
+            const resultdiv = document.getElementById(resultid);
+
+            if(!resultdiv.classList.contains('hidden')){
+                resultdiv.classList.add('hidden');
+            }else{
+                action();
+            }}
+        
+function showa(){
+            // alert("hi");
+            const smalldiv = document.getElementById('small');
+            let content ="";
+           for(i=97;i<=122;i++){
+            content  += String.fromCharCode(i)+' ';
+           }
+        //    console.log(sum);
+          smalldiv.innerHTML+= content;
+          smalldiv.classList.remove('hidden');
+        }
+
+
+    </script>
+</body>
+</html>
