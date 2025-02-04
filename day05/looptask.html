@@ -112,17 +112,9 @@
             <h1>alphabet from a to z</h1>
             <button onclick="task06('small',showa)" >show</button>
             <div id="small" class="result hidden" ></div>
-        </div>
-       
+        </div> 
     </div>
-
-  
-
-
-
-    <script>
-
-
+<script>
 //      Task 1: Print Even Numbers from 1 to 20
 //          Scenario: Write JavaScript code that prints all even numbers from 1 to 20.
 //          Instructions:
@@ -130,7 +122,6 @@
 //          Use an if statement to check if a number is even and print it.
 
            
-
 // Task 2: Print Multiples of 5 up to 50
 //          Scenario: Write JavaScript code that prints all multiples of 5 up to 50.
 //          Instructions:
@@ -138,7 +129,6 @@
 //          Use an if statement to check if a number is a multiple of 5 and print it.
 
            
-
 // Task 3: Create a JavaScript program that calculates the factorial of a given number using a for loop.
 //          Instructions:
 //          Use a for loop to multiplication the given 
@@ -147,7 +137,6 @@
 //          5*4*3*2*1
 
            
-
 // Task 5:Write a JavaScript script that uses nested loops to 
 //      print a multiplication table for numbers 1 through 5.           
 //      Instructions:
@@ -155,7 +144,6 @@
 //      use nested loop
         
          
-
 // Task 4: Print the Alphabet
 //         Scenario: Write JavaScript code that prints the alphabet from A to Z.
 //         Instructions:
@@ -163,8 +151,8 @@
 //         Convert the ASCII values to characters and print them.
 //         Hint - console.log(String.fromCharCode(i));
 
-          
-// TASK 01 --->
+
+// TASK 01 ---->
            function toggleEven(resultId,action){
             const resultDiv = document.getElementById(resultId);
             if(!resultDiv.classList.contains('hidden')){
@@ -176,23 +164,22 @@
             }
            }
            function showEven(){
-            // prompt("hi");
+// prompt("hi");
             const resultDiv = document.getElementById('even_num');
             resultDiv.innerHTML = "";
              for(i = 1; i<=20; i++){
                 if(i%2==0){
-                    // console.log(i,"even number");
-                    resultDiv.innerHTML +=  i + ", ";
-                    
+// console.log(i,"even number");
+                    resultDiv.innerHTML +=  i + ", ";   
                 }
             }
-            // resultDiv.innerHTML +=  "hi";
-            resultDiv.classList.remove('hidden');
+// resultDiv.innerHTML +=  "hi";
+        resultDiv.classList.remove('hidden');
            }
 // TASK 02---->  
         function togglemultiples(resultId,action){
             const resultDiv = document.getElementById(resultId);
-            // resultDiv.innerHTML="";
+// resultDiv.innerHTML="";
             if(!resultDiv.classList.contains('hidden')){
                 resultDiv.classList.add('hidden');
             }else{
@@ -200,18 +187,18 @@
             }
         }
         function showMulti(){
-            // prompt("weclome");
+// prompt("weclome");
             const resultDiv= document.getElementById('mulit_num');
             resultDiv.innerHTML="";
             for(i=1;i<=50;i++){
                 if(i%5==0){
-                    // console.log(i," is multiples of 5");
+// console.log(i," is multiples of 5");
                     resultDiv.innerHTML += i + " ";
                 }
             }
             resultDiv.classList.remove('hidden');
         }
-// TASK 03--->
+// TASK 03---->
         function toggleFact(resultId,action){
             const resultDiv = document.getElementById('fact_num');
             if(!resultDiv.classList.contains('hidden')){
@@ -220,27 +207,27 @@
             else{
                 action();
             }
-            // fact 5 = 5! = 5*4*3*2*1  
+// fact 5 = 5! = 5*4*3*2*1  
         }
         function showFact(){
-            var input = document.getElementById('factid').value;
-            // alert(input)
-            var output = document.getElementById('fact_num');
-            output.innerHTML="";
-            // alert(input);
-            // fact =+ prompt("enter number::");
-            var fact=1;
-           for(i=input;i>0;i--){
-            // console.log(i);
-             fact *= i;
-           }
-        //    alert(fact);
-        output.innerHTML = `Factorial of ${input} is ${fact}`;
-           output.classList.remove('hidden')           
+        var input = document.getElementById('factid').value;
+// alert(input)
+        var output = document.getElementById('fact_num');
+        output.innerHTML="";
+// alert(input);
+// fact =+ prompt("enter number::");
+        var fact=1;
+        for(i=input;i>0;i--){
+// console.log(i);
+        fact *= i;
         }
-// TASK 04
+// alert(fact);
+        output.innerHTML = `Factorial of ${input} is ${fact}`;
+        output.classList.remove('hidden');          
+        }
+// TASK 04---->
         function toggletable(resultId,action){
-            const div = document.getElementById(resultId);
+        const div = document.getElementById(resultId);
             if(!div.classList.contains('hidden')){
                 div.classList.add('hidden');
             }else{
@@ -248,76 +235,66 @@
             }
         }
         function show_tables(){
-            const div = document.getElementById('tables');
-            div.innerHTML='';
-            // alert("hi");
-            for(i = 1;i<=5; i++){
-                for(j=1;j<=10; j++){
-                div.innerHTML += `${i} * ${j} = ${i * j}<br>`;
-                // (i," * ",j, " = ", i*j);
-            }
-            div.innerHTML+='<br>';
-           } 
-           div.classList.remove('hidden')                                           
+        const div = document.getElementById('tables');
+        div.innerHTML='';
+// alert(" hi ");
+        for(i = 1;i<=5; i++){
+            for(j=1;j<=10; j++){
+        div.innerHTML += `${i} * ${j} = ${i * j}<br>`;
+// (i," * ",j, " = ", i*j);
         }
-// TASK 05
-
+        div.innerHTML+='<br>';
+        } 
+        div.classList.remove('hidden');                                          
+        }
+// TASK 05----->
         function task05(resultid,action){
-            // alert("hi");
-            const resultdiv = document.getElementById(resultid);
-
-            if(!resultdiv.classList.contains('hidden')){
-                resultdiv.classList.add('hidden');
-            }else{
-                action();
-            }
-            
+// alert("hi");
+        const resultdiv = document.getElementById(resultid);
+        if(!resultdiv.classList.contains('hidden')){
+            resultdiv.classList.add('hidden');
+        }else{
+            action();
+        }   
         //     const div = document.getElementById('cap');
         //     let content ="";
         //    for(i=65;i<=90;i++){
         //     content  += String.fromCharCode(i)+' '
         //    }
-        // //    console.log(sum);
+        //    console.log(sum);
         //   div.innerHTML+= content;
         }
         function showA(){
-            const resultdiv = document.getElementById('cap');
-            resultdiv.innerHTML="";
-            let content ="";
-           for(i=65;i<=90;i++){
-            content  += String.fromCharCode(i)+' '
-           }
-        //    console.log(sum);
+        const resultdiv = document.getElementById('cap');
+        resultdiv.innerHTML="";
+        let content ="";
+        for(i=65;i<=90;i++){
+            content  += String.fromCharCode(i) + ' ';
+        }
+//  console.log(sum);
           resultdiv.innerHTML+= content;
           resultdiv.classList.remove('hidden');
         }
-
-// TASK 05
-
-
-function task06(resultid,action){
-            // alert("hi");
-            const resultdiv = document.getElementById(resultid);
-
+//TASK 06----->
+        function task06(resultid,action){
+//  alert("hi");
+        const resultdiv = document.getElementById(resultid);
             if(!resultdiv.classList.contains('hidden')){
                 resultdiv.classList.add('hidden');
             }else{
                 action();
             }}
-        
-function showa(){
-            // alert("hi");
-            const smalldiv = document.getElementById('small');
-            let content ="";
-           for(i=97;i<=122;i++){
-            content  += String.fromCharCode(i)+' ';
+        function showa(){
+//  alert("hi"); 
+        const smalldiv = document.getElementById('small');
+        let content = "";
+        for(i=97;i<=122;i++){
+            content += String.fromCharCode(i) + ' ';
            }
-        //    console.log(sum);
+//  console.log(sum);
           smalldiv.innerHTML+= content;
           smalldiv.classList.remove('hidden');
         }
-
-
-    </script>
+</script>
 </body>
 </html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- 
+    function declaration/ defination ::::
+
+    function functionName(a,b,parameters) {   parameters
+     sum = a+b;
+      return sum;
+    }
+
+     functionname(3,2) ==> calling   arguments
+    
+     -->
+
+
+    <!-- function calling or ivoking =>   function
+     1. function name stores function declaration/defination.
+     2. function ( ) calls the function = out.
+     3. logging the function calling prints the return value.
+     4. statements after return value will not return.
+     5. named functions can only hosted.
+     6. in js functions are first class fuvtion:: that means functions can be assigned to a varibles
+
+     initiallination part moves up not declaration/valuses of a function
+
+     annamous funtion :: is a funtion that decline without a name of the function.
+
+   
+      --> 
+     <script>
+        // funtions ;;
+        function sum(a,b){
+            a+b;
+        }
+        sum(2,3);
+
+        //  annonamous  functions
+        var a = function sum(a,b){
+                a+b;
+                }
+            console.log(a(2,3));
+
+        // arrow functions  ----> { } , ( ), return, funtion keyword
+        var fun = () => {
+            return "This is Arrow function"
+        }
+        var a = (a,b)=>a+b;
+        console.log(a(5,4))
+
+        var a = a=>a+a+2;
+        console.log(a(5));
+
+        // iife === (immediate invoking funtion expression )
+        // self invoking function
+        // sytax == (function declaration )(calling)
+        (function(){
+            console.log("im self invoking function");
+        })() // --> helps call immediately
+
+        // (()=>console.log("hello world"))();
+
+
+        // function name stores funtion declation
+
+        // callback ::: when function defination is passed to another function as an argument and later on excutes
+
+        function fun(a){
+            console.log(a);
+        }
+
+        function sum(a,b){
+            console.log(a+b);
+        }
+        fun(sum);   // function name stores funtion declation
+
+        // why claaback funtions;;; 
+
+        function one(a){
+            console.log("one");
+            a(three)
+        }
+
+        function two(a){
+            console.log("two");
+            a();
+        }
+
+        function three(){
+            console.log("three");
+        }
+
+        // three()
+        // two()
+        // one()
+
+        one(two);
+
+        function products(a){
+            console.log("Products added to cart");
+            a(order);
+            
+        }
+
+        function payment(order){
+            console.log("Payment completed");
+            order();
+        }
+
+        function order(){
+            console.log("order placed");
+        }
+
+        products(payment)
+
+
+        // higher-order function :: takes one or more fuctions as arguments or results a function as its result.
+
+        // higherorderfunctions(function1,function2, function3) 
+
+
+
+
+
+        
+     </script>
+</body>
+</html>
