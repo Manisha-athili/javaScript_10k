@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    types of functions::
+    1. named functions
+    2. anonymous functions
+    3. arrow functions
+    4. iife
+    5. CallBack functions
+    6. higher oder functions
+
+    var let const difference::
+
+    var ==> 
+    1. redeclaration :: var can be re-declared
+    2. reassignment ::  can be  reassignment
+    3. initializtion :: can be initialization
+    4. hosting ::  var is hoisted to the top of the scope
+    5. globel , local scope
+
+    let ==>
+    1. redeclaration :: let cannot be re-declared
+    2. reassignment ::  can be  reassignment
+    3. initializtion :: can be initialization
+    4. hosting ::  let cannot be hoisted to the top of the scope
+    5. globel , local, block scope
+
+    const ==>
+    1. redeclaration :: const cannot be re-declared
+    2. reassignment ::  cannot be  reassignment
+    3. initializtion :: can be initialization
+    4. hosting ::  const connot be hoisted to the top of the scope
+    5. globel, local, block scope
+
+
+    scope ;; 
+    1. Globle Scope :: variable declared in globel scope can be accessed anywhere
+
+    2. block Scope {}:: variable declared in block scope can be access in only in the block
+
+    3. local scoop fun(){}:: variable declared in function  can be access in only in the function but accessed outside the function 
+
+    temperal dead Zone => script for let and const
+
+    closures :: when an inner function have a accesibility of an varible which is declare in outer function even after excution of outer function.
+
+    chainin scoop :: checkes for block tn local tn goble
+     block > >  > local >>>> gobel -- not defined
+
+     Globel excution content 
+
+     memory allocation phase                     code excutution  
+       ver a = undefine                                a=2
+       var b = undefine                                b=5
+       var c = undefine                                c=7
+        function fun(){vghfgc}                       vghfgc
+                                                   memory allocation phase    code excutution             
+                                                            ee                    rdfg
+
+                                                            fuuntion excuted and disappears...
+
+    varible declared with let and const will be hoisted in temperal dead zone...
+
+
+
+    -->
+
+    <script>
+        // var a ; // declaration;
+        //     a = 10;  // initializtion
+        //     a = 50;   // re initializtion
+        // var a = 10 // assignment
+        // var a = 50 // re assignment
+
+        // differences of var let and const
+
+        for( i = 0 ; i<=3;i++){
+
+        }
+        console.log(i); // 4 it is golbel scope
+
+        for( let i = 0 ; i<=3;i++){
+
+        }
+        console.log(i);  // error is not defined  block 
+
+        for( const i = 0 ; i<=3;i++){
+
+        }
+        console.log(i); // Assignment to constant variable. error
+
+
+        let a ="nysql"
+        function hello(){
+            console.log(a);
+            return function hi(){
+                console.log("hi");
+            }
+            
+        }
+        hello()();  
+        
+
+
+        
+    </script>
+</body>
+</html>

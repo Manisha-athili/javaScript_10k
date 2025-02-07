@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    DOM ===> Document object model : dom is used to maniplate the content, structure and styling in a doc
+    it reprasents every elment as a object.
+    it is used dynamically access and update the content.
+    dom has methods for accessing and properties for manipulating.
+
+-------------Methods for accessing ELEMENTS::
+    1. document.getElementsByTagname (it comes in collections)
+    2. document.getElementsByClassname("")
+        (it comes in collections and can be accessed through indexing)
+    3. document.getElementById
+        (id is unique)
+    4. document.querySelector("")
+        it selects the first element
+        it can select by tagname, .classname, #id
+
+    5. document.querySelectorAll("")
+            (it comes in collections)
+            (it can select by tagname, .classname, #id)
+
+
+-----------Methods for accessing Content in Element::
+
+                            methods.      properties
+    1. document.getElementById('imId').innerHTML :: checkes for tags and applies that property values.
+    2. document.getElementById('imId').innertext :: everything reads as text including tags
+    3. document.getElementById('imId').textContent :: ""
+
+    
+----------Modify the content :: 
+    1. let b = document.getElementsByClassname('')[indexing]
+            b.innerHTML = "new content"
+            or
+     let a = document.getElementByClassname('imId')
+            a[indexing].innerHTML ="new content"
+
+
+--------------------styling ::::
+           let element = document.getElementById('imId');
+    element.style.color="blue";
+    element.style.backgroundColor="pink";
+    element.style.padding="20px";
+
+
+--------------------- how to create an element:
+
+    let a = document.creatElement('h1');   to creat
+
+    to attact created element to html page
+     body.append(a);
+
+
+
+
+
+    
+    -->
+    <h1>Im tagName</h1>
+    <h1>Im tagName</h1>
+    <h1>Im tagName</h1>
+    <h1>Im tagName</h1>
+
+    <div class="child">Im elementsByClassname</div>
+    <div class="child">Im elementsByClassname</div>
+    <div class="child">Im elementsByClassname</div>
+    <div class="child">Im elementsByClassname</div>
+
+    <div id="imId">Im element by id</div>
+    <div id="imId">Im element by id</div>
+
+    <div id="first">BackGroundColor</div>
+
+    <div class="class">im collection of classes</div>
+    <div class="class">im collection of classes2</div>
+    <div class="class">im collection of classes</div>
+   <script>
+    console.log(document)  // get whole document 
+    console.log(document.getElementsByTagName('h1')) // for all h1 tag
+    console.log(document.getElementsByTagName('h1')[2]) // particular element by indexing
+
+    // console.log(document.getElementsByClassname('child')) 
+    console.log(document.querySelector('div')) 
+    console.log(document.querySelectorAll('h1')) 
+
+
+    // styling :::
+
+    let element = document.getElementById('imId');
+    element.style.color="blue";
+    element.style.backgroundColor="pink";
+    element.style.padding="20px";
+
+// task 01
+    let element1 = document.getElementById('first');
+    element1.style.backgroundColor="pink";
+
+// task 02
+
+    let select = document.getElementsByClassName('child');
+    console.log(select[0])
+    console.log(select[1])
+    console.log(select[2])
+    console.log(select[3])
+
+// task 03
+
+    element.innerHTML= "<i>"+"Im the content" + "</i>"
+
+//  task 04 
+
+    let class1 =  document.getElementsByClassName('class');
+    console.log(class1[1])
+
+//  class 
+
+
+
+
+
+
+
+
+   </script>
+</body>
+</html>

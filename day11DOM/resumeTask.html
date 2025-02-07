@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        /* color: rgb(16, 16, 179); */
+        /* line-height: 2px; */
+       
+    }
+</style>
+<body>
+    <!-- How to create Element in html by DOM:: -->
+
+  
+ 
+    <script>
+        let body = document.body
+
+// header of resume
+        let header = document.createElement('header')
+        let name = document.createElement('h1');
+        let mail = document.createElement('p');
+        let contact = document.createElement('p');
+        let linkedIn = document.createElement('p');
+        let line = document.createElement('div');
+       
+        // console.log(name.value='name'); used for form elements...
+        name.innerText='Manisha Athili'   // only created but not added to html
+        mail.innerHTML='<b>Mail: </b> <a> manishaathili1125@gmail.com </a>';
+        contact.innerHTML='<b>Contact: </b> 9010649537';
+        linkedIn.innerHTML='<b>LinkedIn: </b> <a> https://www.linkedin.com/in/manisha-athili011/ </a>'
+        
+        name.style.color='rgb(16, 16, 179)';
+        
+        name.style.textAlign='center';
+        contact.style.textAlign='center';
+        linkedIn.style.textAlign='center';
+        mail.style.textAlign='center';
+
+        header.style.lineHeight='0.5rem'
+        header.style.padding='10px'
+
+        line.style.borderTop='2px solid black'
+        line.style.margin='30px'
+
+        body.append(header)
+        header.append(name,mail,linkedIn,contact);
+        
+        console.log(name)
+        console.log(header)                                 // header completed
+
+
+// profile summary :::
+
+        let profile = document.createElement('div');
+        let pro_h1 = document.createElement('h2');
+        let line1 =  document.createElement('div');
+        let para= document.createElement('p');
+
+        pro_h1.innerHTML='PROFILE SUMMARY';
+        para.innerHTML='A passionate and self-motivated individual with a strong foundation in web development and programming. Experienced in building interactive projects using modern technologies like HTML, CSS, JavaScript, React.js, and SQL. Skilled in designing, implementing, and debugging applications with a focus on user experience and performance optimization. A quick learner with excellent problem-solving abilities and teamwork skills.'
+
+        pro_h1.style.lineHeight='0px'
+        line1.style.borderTop='2px solid black'
+        profile.style.padding='10px'
+        // line1.style.margin='0px'
+
+        body.append(profile)
+        profile.append(pro_h1,line1,para);    // profile summary complited
+
+// education :: 
+
+        let education= document.createElement('div');
+        let edu_h1 = document.createElement('h2');
+        let line2 =  document.createElement('div');
+        let div1= document.createElement('div');
+        let div2= document.createElement('div');
+        let div3= document.createElement('div');
+        let div4= document.createElement('div');
+
+        edu_h1.innerHTML='EDUCATION'
+        edu_h1.style.lineHeight='0px'
+        line2.style.borderTop='2px solid black';
+        education.style.padding='10px'
+
+        let p1 = document.createElement('p').innerHTML='PRATHIBHA DEGREE COLLAGE';
+        let p2 = document.createElement('p').innerHTML='2021-2024';
+        let p3 = document.createElement('p').innerHTML='BSC Computer Science';
+        let p4 = document.createElement('p').innerHTML='8.4 CGPA';
+        let p5 = document.createElement('p').innerHTML='SRI GAYATRI JUNIOR COLLAGE';
+        let p6 = document.createElement('p').innerHTML='2019-2021';
+        let p7 = document.createElement('p').innerHTML='MPC';
+        let p8 = document.createElement('p').innerHTML='84.8%';
+
+        // div1.style.width='100%'
+        // div1.style.display='flex';
+        // div1.style.justifyContent='space-between'
+        // div1.style.ju
+
+
+        body.append(education); console.log(body)
+        education.append(edu_h1,line2,div1,div2,div3,div4);
+        div1.append(p1,p2);
+        div2.append(p3,p4);
+        div3.append(p5,p6);
+        div4.append(p7,p8);
+        
+// PROJECTS ;; 
+        let projects= document.createElement('div');
+        let proj_h1 = document.createElement('h2');
+        let line3 =  document.createElement('div');
+        let pp1 = document.createElement('p');
+        let pp2 = document.createElement('p');
+        let pp3 = document.createElement('p');
+
+        pp1.innerHTML=
+        '<b>TODAYS NEW APP</b> [Skills: Html | CSS | React.js | Rest API] <ul>  <li>Today’s news is a news app which can be used to get the recent and older news updates easily, get updated yourself every second current affairs, politics news, business news, science and sports news.</li> <li>	It updates throughout the day to bring you the top local, national, and world headlines, plus personalized news tailored to your interests using react.js.</li></ul>  ';
+
+        pp2.innerHTML=
+        '<b>SIMON GAME </b>  [JavaScript | HTML5 | CSS] <ul>  <li>Designed the UI to implement the game logic using JavaScript. </li> <li>The game features four colour buttons that light up in a specific sequence, and the player must replicate the pattern by clicking on the buttons in the correct order.</li></ul>  ';
+
+
+        pp3.innerHTML=
+        '<b>SNAKE-GAME </b> [JavaScript | HTML5 | CSS] <ul>  <li>Today’s news is a news app which can be used to get the recent and older news updates easily, get updated yourself every second current affairs, politics news, business news, science and sports news.</li> <li>	It updates throughout the day to bring you the top local, national, and world headlines, plus personalized news tailored to your interests using react.js.</li></ul>  ';
+
+        proj_h1.innerHTML='PROJECTS ';
+        line3.style.borderTop='2px solid black'
+        proj_h1.style.lineHeight='0px'
+        projects.style.padding='10px'
+
+
+        body.append(projects);
+        projects.append(proj_h1,line3,pp1,pp2, pp3);
+
+// skills :: 
+        let skills= document.createElement('div');
+        let skil_h1 = document.createElement('h2');
+        let line4 =  document.createElement('div');
+        let ul = document.createElement('ul');
+
+        skil_h1.innerHTML='TECHNICAL SKILLS'
+        skil_h1.style.lineHeight='0px'
+        line4.style.borderTop='2px solid black';
+        skills.style.padding='10px'
+
+        ul.innerHTML='<li><b>Technologies:      </b>HTML, CSS, JavaScript, partially python and Java</li> <li><b>Framework:      </b>Bootstrap</li> <li><b>Database:</b>      SQL</li> <li><b>Tools:     </b>Git, GitHub, Vs Code</li> '
+
+
+        body.append(skills)
+        skills.append(skil_h1,line4,ul)
+
+        body.style.padding='80px'
+    </script>
+</body>
+</html>
