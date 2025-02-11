@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  11 feb 2025
+
+    types of events :
+        1. mouse events
+        2. keyboard events
+        3. form events
+        4. window events
+
+        event handlers :: 
+            1. dom events
+            2. event handlers
+
+        element.addEventListeners("type of events", hello())
+
+        funtion hello(){
+        log("hello")
+        }
+
+
+******************** Form EVENTS ::::
+    forms and inputs ::
+
+    how many ways to access forms and events?? 
+
+
+
+
+
+
+     -->
+
+     <form action="">
+        <label for="name">username</label>
+        <input type="text" id="name">
+        <button type="submit" onclick="submit">Submit</button>
+     </form>
+    <!-- how to stop/ privent form submit ::  e.preventDefault()  -->
+
+    <script>
+        var btn = document.querySelector('form');
+        btn.addEventListener("submit", function(e){
+            e.preventDefault() // if it not given form will be sumbited by default
+            var inp = document.querySelector('input');
+            console.log(inp.value);  // one way
+
+            var inp = document.forms[0][0]
+            console.log(inp.value);  // 2nd way 
+
+            
+
+        })
+
+
+        
+
+    </script>
+</body>
+</html>
