@@ -30,33 +30,76 @@
 
     how many ways to access forms and events?? 
 
-
-
-
-
-
      -->
 
-     <form action="">
+     <!-- <form action="">
         <label for="name">username</label>
         <input type="text" id="name">
         <button type="submit" onclick="submit">Submit</button>
-     </form>
+     </form> -->
     <!-- how to stop/ privent form submit ::  e.preventDefault()  -->
 
+    <!-- task 01 -->
+     <form action="">
+       <input type="password" name="password" id="pass"> <br> <br>
+       <input type="password" name="password" id="repass"> <br> <br>
+       <!-- <div id="msg"></div> -->
+       <button type="submit" id="sub">submit</button> <br> <br>
+     </form>
+
     <script>
-        var btn = document.querySelector('form');
-        btn.addEventListener("submit", function(e){
-            e.preventDefault() // if it not given form will be sumbited by default
-            var inp = document.querySelector('input');
-            console.log(inp.value);  // one way
+        // var btn = document.querySelector('form');
+        // btn.addEventListener("submit", function(e){
+        //     e.preventDefault() // if it not given form will be sumbited by default
+        //     var inp = document.querySelector('input');
+        //     console.log(inp.value);  // one way
+        //     var inp = document.forms[0][0]
+        //     console.log(inp.value);  // 2nd way 
+        // })
 
-            var inp = document.forms[0][0]
-            console.log(inp.value);  // 2nd way 
+        // task 01
+       
 
+        let sub = document.querySelector('form')
+        sub.addEventListener('submit',function(e){
+            e.preventDefault() 
+            var inp1 = document.forms[0][0]
+            console.log(inp1.value);  // 2nd way 
+            var inp2 = document.forms[0][1]
+            console.log(inp2.value);
             
+            let repass = document.getElementById('repass');
+            let submit = document.getElementById('sub')
+            let msg = document.createElement('div'); // just created 
+            console.log(msg); // empty
+            // repass.insertAdjacentElement("afterend", msg);
+            submit.insertAdjacentElement("beforebegin", msg);
+            // .appendChild(msg)
+            if(inp1.value==inp2.value){
+                msg.innerText="password is equal"
+                msg.style.color = 'green'
+            }
+            else{
+                msg.innerText="mismatched"
+                msg.style.color="red"
+            }
+            // inp1.value='';
+            // inp2.value='';
 
+            // practice ;;;
+            // 1 . random color generator
+            // 2 . counter
+            // 3 . todolist
+            // 4 . calculator
+            // 5 . otp generator
+            // 6 . digital clock
+            // 7 . age calculator
+            // 8.  how to create cards
+            // 9 . 
         })
+
+
+        
 
 
         
