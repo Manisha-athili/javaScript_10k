@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            width: 100%;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .strength {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .weak { color: red; }
+        .medium { color: orange; }
+        .strong { color: green; }
+    </style>
+</head>
+<body>
+      <!-- 1) Password Strength Checker:
+Create an input field where a user types a password, and the script checks if the password is "Strong", "Medium", or "Weak" based on its length.
+2) password matcher
+3) simple calculator -->
+    <div class="container">
+        <h2>Password Strength Checker</h2>
+        <input type="password" id="password" placeholder="Enter password">
+        <div class="strength" id="strength"></div>
+    </div>
+
+    <script>
+        document.getElementById('password').addEventListener('input', function() {
+            let password = this.value;
+            let strengthText = document.getElementById('strength');
+
+            if (password.length < 6) {
+                strengthText.textContent = "Weak";
+                strengthText.className = "strength weak";
+            } else if (password.length < 10) {
+                strengthText.textContent = "Medium";
+                strengthText.className = "strength medium";
+            } else {
+                strengthText.textContent = "Strong";
+                strengthText.className = "strength strong";
+            }
+        });
+    </script>
+</body>
+</html>
