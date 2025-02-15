@@ -3,112 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Array Methods Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        input, button {
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            background: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div style="width: 600px;">
-        Task 1: Using concat
-        Objective: Merge two or more <br>
-        Task: Create two arrays, one with your favorite sports and one with your favorite hobbies. Use the concat method to merge them into a single <br>
-        Expected Output: Display the merged array.
+    <div class="container">
+        <h3>Task 1: Using concat</h3>
+        <input type="text" id="sports" placeholder="Enter your favorite sports">
+        <input type="text" id="hobbies" placeholder="Enter your favorite hobbies">
+        <button id="submit">Submit</button>
+        <button id="concat">Concat</button>
+        <p class="output" id="displaySports"></p>
+        <p class="output" id="displayHobbies"></p>
+        <p class="output" id="mergedOutput"></p>
     </div>
-        <input type="text" placeholder="Enter your favorite sports :">
-        <input type="text" placeholder="Enter your favorite hobbies :">
-        <p></p><p></p>
-        <button>submit</button>
-        <p></p>
-        <button>Concat</button>
 
-        <div style="width: 600px;">
-            Task 2: Using splice <br>
-            Objective: Modify an array by adding, removing, or replacing elements.
-            Task: Create an array of numbers from 1 to 10. Use the splice method to remove the numbers 4, 5, and 6, and replace them with the numbers 40, 50, and 60.
-            Expected Output: Display the array before and after the splice operation.
-        </div>
-        <p></p>
-        <div>
-            Task 3: Using slice
-        Objective: Extract a portion of an array without modifying the original array.
-        Task: Create an array of the days of the week. Use the slice method to create a new array that contains only the weekdays.
-        Expected Output: Display the original array and the new array.
-        </div>
-        <div>
-            Task 4: Using join
-            Objective: Convert an array to a string.
-            Task: Create an array of words that form a sentence. Use the join method to combine them into a single string with spaces between each word.
-            Expected Output: Display the resulting sentence.
-        </div>
+    <div class="container">
+        <h3>Task 2: Using splice</h3>
+        <button id="splice">Perform Splice</button>
+        <p class="output" id="spliceOutput"></p>
+    </div>
 
-        <div>
-            Task 5: Using sort
-        Objective: Sort the elements of an array.
-        Task: Create an array of random numbers. Use the sort method to sort the numbers in ascending order.
-        Expected Output: Display the sorted array.
+    <div class="container">
+        <h3>Task 3: Using slice</h3>
+        <button id="slice">Perform Slice</button>
+        <p class="output" id="sliceOutput"></p>
+    </div>
 
-        </div> 
+    <div class="container">
+        <h3>Task 4: Using join</h3>
+        <button id="join">Perform Join</button>
+        <p class="output" id="joinOutput"></p>
+    </div>
 
-<script>
-    // task 01
-    let arr1 = document.querySelector('input')
-    let arr2 = document.querySelectorAll('input')[1]
-    let btn1 = document.querySelectorAll('button')[0]
-    let btn2 = document.querySelectorAll('button')[1]
-    let obj1 = document.querySelectorAll('p')[0]
-    let obj2 = document.querySelectorAll('p')[1]
-    let obj3 = document.querySelectorAll('p')[2]
-    btn1.addEventListener('click',function(){
-        if(obj1.innerText == arr1.value){
-            obj1.innerText= []
-            obj2.innerText=[]
-        }else{
-            obj1.innerText= arr1.value 
-            obj2.innerText= arr2.value 
-        }
-      
-    })
-    btn2.addEventListener('click',function(){
-        if(obj3.innerText=true){
-            obj3.innerText= [];
-        }else{
-            obj3.innerText=arr1.value.concat(arr2.value)
-        }
-       
-    })
-    
-// task 02
-let arr = [1,2,3,4,5,6,7,8,9,10]
-console.log(arr)
-arr.splice(3,3,40,50,60);
-console.log(arr);
+    <div class="container">
+        <h3>Task 5: Using sort</h3>
+        <button id="sort">Perform Sort</button>
+        <p class="output" id="sortOutput"></p>
+    </div>
 
-// task 03 
-let week = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] 
-console.log(week)
-let newArr = week.slice(0,4);
-console.log(newArr);
+    <script>
+        document.getElementById("submit").addEventListener("click", function() {
+            document.getElementById("displaySports").innerText = "Sports: " + document.getElementById("sports").value;
+            document.getElementById("displayHobbies").innerText = "Hobbies: " + document.getElementById("hobbies").value;
+        });
 
-// task 04
-let words =["Hello ","it's ","pleasure ", "to ", "have ", "you ", "here "];
-console.log(words)
-let sentence = " "
-for(i of words){
-    sentence += i;
-}
-console.log(sentence)
+        document.getElementById("concat").addEventListener("click", function() {
+            let sportsArray = document.getElementById("sports").value.split(',');
+            let hobbiesArray = document.getElementById("hobbies").value.split(',');
+            let mergedArray = sportsArray.concat(hobbiesArray);
+            document.getElementById("mergedOutput").innerText = "Merged: " + mergedArray.join(", ");
+        });
 
-// task 05
-let randomArr = [34,64,65,34,342,1,2]
-console.log(randomArr);
-randomArr.sort()
-console.log(randomArr);
-randomArr.sort(function(a, b){return a - b})
-console.log(randomArr);
+        document.getElementById("splice").addEventListener("click", function() {
+            let arr = [1,2,3,4,5,6,7,8,9,10];
+            arr.splice(3, 3, 40, 50, 60);
+            document.getElementById("spliceOutput").innerText = "Spliced Array: " + arr.join(", ");
+        });
 
+        document.getElementById("slice").addEventListener("click", function() {
+            let week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+            let weekdays = week.slice(0,5);
+            document.getElementById("sliceOutput").innerText = "Weekdays: " + weekdays.join(", ");
+        });
 
+        document.getElementById("join").addEventListener("click", function() {
+            let words = ["Hello", "it's", "a", "pleasure", "to", "have", "you", "here"];
+            let sentence = words.join(" ");
+            document.getElementById("joinOutput").innerText = "Sentence: " + sentence;
+        });
 
-
-
-</script>
-
+        document.getElementById("sort").addEventListener("click", function() {
+            let randomArr = [34, 64, 65, 34, 342, 1, 2];
+            randomArr.sort(function(a, b){return a - b});
+            document.getElementById("sortOutput").innerText = "Sorted Array: " + randomArr.join(", ") + " using sort(function(a, b){return a - b})";
+        });
+    </script>
 </body>
 </html>
