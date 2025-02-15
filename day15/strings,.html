@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    String :: sequence of characters.. strings are immutable. we cannt change a string but new str is create.
+
+    str1 = "string"
+    str2 = 'string'
+    str3 = `string ${varible}` string interpolation
+
+    string methods::::
+    1.at():: returns char +and - index values
+    2.charAt() :: returns  character only positive
+    3. charCodeAt() :: returns unicode value of that character
+    4. slice(lower,upperbond) :: it allows - values
+        as string are immutable it will not change but returns new string without modifing string...
+    5.substring(l,u):: considers a portion of string and returns as new string, negative values condsidered as zero 
+    6. substr(index,length) :: 
+    7. toUpperCase() :: 
+    8. toLowerCase() ::
+        as string are immutable it will not change but returns as new string without modifing old string...
+
+    9. concat():
+    10. trim():: to remove spaces at starting and ending...
+    11. repeat(no, of times):: to repeat a string a particular number of times
+    12. slipt():slipt is used to convert / slipt a string into an array
+    13. replace(searchvalue,replacevalue):
+    14. replaceAll()
+
+
+    STRING SEARCH METHODS ::
+    1. indexOf("value",tostartindex)
+    2. lastindexOf() :: returns -1 if the text is not found..
+    3. search():: retuns the index value.
+    4.match(): if the match value is found it will joins into an array
+    5. includes("valuse"): returns true or false..
+
+    / /ig ==> incase sensetive
+
+
+    -->
+    <script>
+    name = "priyanka is good "
+    console.log( name.charAt(6))
+    console.log( name.charAt(6).charCodeAt())  
+    console.log(name.slice(0,5)); // START Index and end index
+    console.log(name.slice(2,-1)); //
+    console.log(name.substring(2,-3));
+    console.log(name.substr(2,3)); // start and num of values or length of the 
+    console.log(name.toUpperCase());
+    console.log(name.toLowerCase());
+    console.log(name.toUpperCase());
+    console.log(name + "is good"); /// name will not change to uppercase bcz strings r immutable
+    console.log(name.concat(' is good'));
+    console.log(name.repeat(5));
+    console.log(name.split(''));
+    
+    
+    
+
+
+    num = 10;
+    console.log(num) // 10
+    num=20;
+    console.log(num) // 20
+    
+
+console.log("--------")
+        a = 'john';
+        b= " ";
+        for(i=0;i<a.length;i++){
+            console.log(a[i])
+            b += a[i];
+        }
+        console.log(b);
+
+        a = 'john';
+        b= " ";
+        for(i=a.length-1;i<=0;i--){
+            console.log(a[i])
+           b=a[i]+b;
+        }
+        console.log(b);
+
+        // strings::
+
+        let str = "hello world world"
+        console.log(str.replace('world','js'));
+        console.log(str.replaceAll('world','js')); // 
+        console.log(str.replace(/world/ig,'js'));  // to change case sensetive
+        console.log(str.includes('hello'))
+        
+    </script>
+</body>
+</html>

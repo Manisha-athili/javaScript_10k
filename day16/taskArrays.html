@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // task 01
+        let movies = ['hi naana', 'beast','hello','seetha ramam'] // len = 4
+        for(i=1;i<=movies.length;i++){
+            console.log(movies[i])
+        }
+        for(i in movies){
+            console.log(movies[i])
+        }
+        for(i of movies){
+            console.log(i)
+        }
+
+        // task 02
+        console.log(movies);
+        movies.pop() // last
+        console.log(movies)
+        movies.shift()// first
+        console.log(movies)
+
+        //task 03 rreverse an array
+        let movies1 = ['hi naana', 'beast','hello','seetha ramam'] 
+        let movie =[]
+        for(i=movies1.length-1;i>=0;i--){
+            console.log(movies1[i])
+            movie.push(movies1[i])
+        }
+        console.log(movie)
+
+        // task 04
+        let arr = [2,4,3,8,6,4,3,2,9];
+        let even = []
+        let odd = []
+        let evensum=0
+        let oddsum=0
+        for(i of arr){
+            (i%2==0)? even.push(i): odd.push(i)
+        }
+        for(i of arr){
+            (i%2==0)? evensum+=i : oddsum+=i
+        }
+        console.log(even,odd);
+        console.log(evensum,oddsum)
+
+        // task 05
+        let hetroArr = ['apple','banana','mango',3,4,5,6,true,{name:"manisha"}]
+        console.log(typeof(hetroArr[1]))
+        console.log(typeof(hetroArr[4]))
+        console.log(typeof(hetroArr[7]))
+        console.log(typeof(hetroArr[8]))
+        num=[]
+        str = []
+        bool=[]
+        obj = []
+
+        for(i of hetroArr){
+            if(typeof(i)== 'string'){
+                str.push(i);
+            }
+            else if(typeof(i)== 'number'){
+                num.push(i);
+            }
+            else if(typeof(i)== 'boolean'){
+                bool.push(i);
+            }
+            else if(typeof(i)== 'object'){
+                obj.push(i);
+            }
+        }
+        console.log(str,num,bool,obj)
+        console.log(obj)
+
+
+
+
+        
+    </script>
+</body>
+</html>
