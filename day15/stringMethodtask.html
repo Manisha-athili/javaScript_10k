@@ -3,143 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <title>String Operations</title>
     <style>
-        .container{
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
         }
     </style>
-    <!-- 
-    Basic level
-    Task 1: take prompt and Convert to Uppercase
+</head>
+<body>
+    <div class="container">
+        <h3>String Operations</h3>
+        <h4>Convert to Uppercase</h4>
+        <input type="text" id="uppercaseInput">
+        <button onclick="convertToUppercase()">Convert</button>
+        <div id="uppercaseResult" class="result"></div>
 
-Task 2: take prompt and Convert to Lowercase
-Task 3: take prompt and Reverse a String
-hints: use split and reverse and join method
-Task 4: take prompt and Count the number of vowels in a string--
-hints use match method
+        <h4>Convert to Lowercase</h4>
+        <input type="text" id="lowercaseInput">
+        <button onclick="convertToLowercase()">Convert</button>
+        <div id="lowercaseResult" class="result"></div>
 
-advanced
+        <h4>Reverse a String</h4>
+        <input type="text" id="reverseInput">
+        <button onclick="reverseString()">Convert</button>
+        <div id="reverseResult" class="result"></div>
 
-Task 3: Word Counter
-Scenario: Count the number of words in a sentence. Task:
-Prompt the user to enter a sentence.
-Split the sentence into words and count them.
-Display the word count.
-Hint: use split and length method
+        <h4>Count the number of vowels</h4>
+        <input type="text" id="vowelInput">
+        <button onclick="countVowels()">Count</button>
+        <div id="vowelResult" class="result"></div>
 
+        <h4>Word Counter</h4>
+        <input type="text" id="wordCounterInput">
+        <button onclick="countWords()">Count</button>
+        <div id="wordCounterResult" class="result"></div>
 
-Task 4: Palindrome Checker
-Scenario: Check if a given string is a palindrome. Task:
-Prompt the user to enter a string.
-Check if the string reads the same forwards and backwards.
-Display a message indicating whether the string is a palindrome
-Hints : use split,join, reverse method in arrays
-inp:john
-out: not a palandrome
-inp:dad
-out:it is a palandrome
-    -->
-<div class="container">
-         <h4>Convert to Uppercase</h4>
-         <input type="text" id="" >
-         <button type="submit" onclick="convertToUppercase()">Convert</button>
-
-         <h4>Convert to Lowercase</h4>
-         <input type="text" >
-         <button type="submit" onclick="convertToLowercase()">Convert</button>
-
-         <h4>Reverse a String</h4>
-         <input type="text" >
-         <button type="submit" onclick="reverseString()">Convert</button>
-
-         <h4>Count the number of vowels</h4>
-         <input type="text" >
-         <button type="submit" onclick="countVowels()">Convert</button>
-
-         <h4>Word Counter</h4>
-         <input type="text" >
-         <button type="submit">Convert</button>
-
-         <h4>Palindrome Checker</h4>
-         <input type="text" >
-         <button type="submit">Check</button>
-</div>
-
+        <h4>Palindrome Checker</h4>
+        <input type="text" id="palindromeInput">
+        <button onclick="checkPalindrome()">Check</button>
+        <div id="palindromeResult" class="result"></div>
+    </div>
 
     <script>
-        let btn = document.querySelectorAll('button')
-        // console.log(btn);
-        
-         // let toUpperCase = prompt("Enter a value to convert to uppercase")
-        // console.log(toUpperCase.toUpperCase())
         function convertToUppercase(){
-            let toUpperCase = document.querySelectorAll('input')[0]
-            let uppervalue = toUpperCase.value.toUpperCase()
-            console.log(uppervalue)
-            let div = document.createElement('div')
-            div.innerHTML=uppervalue
-            // console.log(div)
-            // console.log(div.innerHTML=uppervalue)
-            btn[0].insertAdjacentElement("afterend",div)
-
+            let input = document.getElementById('uppercaseInput').value;
+            document.getElementById('uppercaseResult').innerText = input.toUpperCase();
         }
 
         function convertToLowercase(){
-            // let upperInput2 = document.querySelectorAll('input')[1]
-        // console.log(upperInput2)
-        // let tolowerCase = prompt("Enter a value to convert to lowercase")
-        // console.log(tolowerCase.toLowerCase())
-            let toCase = document.querySelectorAll('input')[1]
-            let lowervalue = toCase.value.toLowerCase()
-            console.log(lowervalue)
-            let div = document.createElement('div')
-            div.innerHTML=lowervalue
-            // console.log(div)
-            // console.log(div.innerHTML=uppervalue)
-            btn[1].insertAdjacentElement("afterend",div)
+            let input = document.getElementById('lowercaseInput').value;
+            document.getElementById('lowercaseResult').innerText = input.toLowerCase();
         }
 
         function reverseString(){
-             // let reverseStr= prompt("Enter a value to reverse it ")
-            // console.log(reverseStr.split('').reverse().join(''))
-            let btn3 = document.querySelectorAll('input')[2]
-            let reverseValue = btn3.value.split('').reverse().join('')
-            // console.log(reverseValue);
-            let div = document.createElement('div')
-            div.innerHTML=reverseValue
-            // console.log(div)
-            // console.log(div.innerHTML=uppervalue)
-            btn[2].insertAdjacentElement("afterend",div)
+            let input = document.getElementById('reverseInput').value;
+            document.getElementById('reverseResult').innerText = input.split('').reverse().join('');
         }
-       function countVowels(){
-        let div = document.createElement('div')
-        div.innerHTML=Value;
-        let matches = str.match(/[aeiouAEIOU]/g); 
-        console.log(matches ? matches.length+' '+ matches : 0)
 
-        let btn4 = document.querySelectorAll('input')[3]
-            let Value = matches.length + " " + 
-            // console.log(reverseValue);
-           
-            // console.log(div)
-            // console.log(div.innerHTML=uppervalue)
-            btn[3].insertAdjacentElement("afterend",div)
+        function countVowels(){
+            let input = document.getElementById('vowelInput').value;
+            let matches = input.match(/[aeiouAEIOU]/g);
+            document.getElementById('vowelResult').innerText = matches ? `Vowel count: ${matches.length}` : 'No vowels found';
+        }
 
-       }
+        function countWords(){
+            let input = document.getElementById('wordCounterInput').value.trim();
+            let wordCount = input.length > 0 ? input.split(/\s+/).length : 0;
+            document.getElementById('wordCounterResult').innerText = `Word count: ${wordCount}`;
+        }
 
-    
-
-        let WordCounter = "lrefmdsjvn kbvdjcvn kljbiodg kjvndusojefn m vioc msiojv"
-        console.log(WordCounter.split(" ").length)
-
-        let name = "dad";
-        let name1 = name.split('').reverse().join('');
-        console.log(name == name1 ? "it is a palandrome":" not a palandrome")
-
-
+        function checkPalindrome(){
+            let input = document.getElementById('palindromeInput').value.toLowerCase();
+            let reversed = input.split('').reverse().join('');
+            let result = (input === reversed) ? "It is a palindrome" : "Not a palindrome";
+            document.getElementById('palindromeResult').innerText = result;
+        }
     </script>
 </body>
 </html>
