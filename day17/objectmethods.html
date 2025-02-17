@@ -18,12 +18,88 @@
         2) by using const
     -->
     
-    <script>
-        let arr = [7,25,29]
-        let obj = {
-            id: 7,
-            batch:29,
-        }
+<script>
+    let arr = [7,25,29]  // just values r in arr but details
+    let obj = {
+        id: 7,
+        age:25,
+        batch:29,
+    } // it gives more detials about the data we store
+    // OBJECT IN A STRING::
+    //  an obj in js is a collection of data in key-value pairs where each string is a string and each valuse can be any DT incliding primite and non primitive...
+    // Ways to create an obj ::
+    // 01. by using literal notation :
+    // 02. by using constructor::
+        // literal notation 
+let obj1 = {
+    key:" value",
+    a:"john",
+    b:10,
+}
+console.log(obj1);
+
+// constructor::
+// let constr = new Object(
+let constr = new Object()
+ constr = {
+    name:"manisha",
+    date:'04-07-2003',
+    place:'hyderabad',
+}
+console.log(constr)
+
+        // HOW TO ACCESS AN OBJECT::
+        // obj values can be accessed by named index. in arr by numbered index.
+
+// 01. dot . notation
+console.log(constr.place);
+
+// 02. square [] notation
+console.log(constr['place']);
+
+// how to modify an obj::
+constr.name="its my name";
+console.log(constr)
+
+// how to add new keys::
+constr.batch="29r"
+console.log(constr) // new key is added
+
+// how to del a key::
+delete constr.place
+console.log(constr)
+
+// ********creating by constrctor::
+let constr2 = new Object({
+    name:"manisha",
+    age:22,
+})
+console.log(constr2);
+
+
+let object = {
+    a:function(){
+        console.log("hello");
+        return("im retured if not undefined")
+    }
+}
+console.log(object.a)
+object.a //function defination
+object.a() // 
+console.log(object.a()) //1st excutes the function and print hello nxt log return value... undefine as no return value exist
+
+// log of function prints the return value
+
+// object methods::
+// 01. Object.keys(obj) : returns keys/ property names.
+// 02. Object.valuses(constr): to print all values
+// 03. Object.entries(constr): converts each key value to an array
+// 04. 
+
+
+
+
+        
     </script>
 </body>
 </html>
