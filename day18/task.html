@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <input type="date"><br><br>
+    <button onclick="myAge()">click me</button>
+    
+    <script>
+        function myAge(){
+            let myday = document.querySelectorAll('input')[0]
+
+            let present = new Date()
+            console.log(myday.value);
+            // let day = myday.value
+            console.log(present);
+            let yourAge = present.getFullYear()-myday.getFullYear()
+            console.log(yourAge);
+            
+            
+
+        }
+        
+        
+        
+    </script>
+</body>
+</html>
