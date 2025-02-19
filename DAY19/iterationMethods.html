@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+            Array iteration and transformation Methods ...
+            arr = [1,2,3]
+            to print 1,2,3 is iteration and add change to 1,2,3, and printing is call trans
+
+            1. forEach : 
+                it performs on new arr
+                it does not return a new array and dont return anything
+                it is used to iterate elements in an array, it executes provided function
+                for each elemnt in an array
+
+            2. map : 
+                it returns a new array with the results og applying.
+                it performs on new array
+                the provided function on element in this array .
+                it is used for iterating and transformation
+                it returns only bool values .
+
+            3.filter :: 
+                it is used to iterate and filtering
+                it returns new array contains elem which satisfies the condition 
+
+            4. reduse ::
+                it will take accumulator
+
+            5.
+            6.sort():
+            7.some():
+            8.every():
+
+
+    -->
+
+    <script>
+        // let arr = [1,2,3]
+        // let a = arr.forEach((val,ind,ar)=>{  // position is predefined
+        //     console.log(val)
+        //     console.log(ind);
+        //     console.log(ar);
+        //     console.log(ar*2); // tran
+        //     // return val+1
+        // })
+        // // console.log(a()) 
+
+        // let arr2 = arr.map((val,ind,ar)=>{  // position is predefined
+        //     console.log(val)
+        //     console.log(ind);
+        //     console.log(ar);
+        //     console.log(ar*2); // tran
+        //     return val+2
+        // })
+        // console.log(arr2)
+
+        // let arr3 = arr.filter((val,ind,ar)=>{  // position is predefined
+        //     console.log(val)
+        //     console.log(ind);
+        //     console.log(ar);
+        //     console.log(ar*2); // tran
+        //     return val+2
+        // })
+        // console.log(arr3)
+
+        // let arr4 = arr.reduce((acc,val,ind,arr)=>{
+        //     return acc+val
+        // },0)
+        // console.log(arr4)
+
+        // task 1
+        let array = [2,4,6,8,7]
+        let newarr = array.map((val)=>{
+            return val*2
+        })
+        console.log(newarr)
+
+        // task 2
+        let squ = array.map((val)=>{
+            return val * val
+        })
+        console.log(squ)
+
+        // task 3
+        let even = array.filter((val)=>{
+            return val %2 ==0
+        })
+        console.log(even)
+
+        // task4
+        let words= ["hi","hello world", "im here"]
+        let long = words.filter((val)=>{
+            return val.length>5
+        })
+        console.log(long)
+
+        // task 5
+        let num = [9,6,7,5,4]
+        let sum = num.reduce((acc,val)=>{
+           return acc+ val
+        },0)
+        console.log(sum)
+
+        // task 6
+        num1 = [1,2,3,4,5]
+
+        let num2=num1.reduce((acc,val)=>{
+            // console.log(num1.length)
+            console.log((val+acc)/num1.length)
+            return (val+acc)
+
+        },0)
+        avg = num2/num1.length
+        console.log(avg);
+
+        // task 7 
+        const people = [
+            { name : "John", age: 17},
+            { name : "Jon", age: 27},
+            { name : "Joh", age: 37},
+            { name : "John", age: 27},
+            { name : "Jhn", age: 7},
+        ]
+
+
+
+        
+        
+    </script>
+</body>
+
+</html>
