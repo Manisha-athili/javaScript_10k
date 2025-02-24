@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>div{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            justify-content: space-evenly;
+            gap: 20px;
+            margin: 2%;
+        }
+        body>div>div{
+            border: 2px solid black;
+            height: 450px;
+            width: 300px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        body>div>div>img{
+            height: 200px;
+            width: 280px;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    
+
+    <script>
+        let body = document.body
+        let container = document.createElement('div');
+        let yourcart = document.createElement('button');
+        let linkcart = document.createElement('a')
+body.append(linkcart)
+linkcart.append(yourcart)   
+body.append(container);
+yourcart.innerHTML="Cart"
+linkcart.href='opencart.html'
+    
+        
+        async function apicall(){
+
+            let apiData = await fetch("https://fakestoreapi.com/products");
+            let final = await apiData.json();
+            console.log(final);
+            localStorage.setItem("data", JSON.stringify(final))
+
+            
+
+final.map((val)=>{
+// console.log(val);
+
+let card = document.createElement('div');
+let img = document.createElement('img');
+let price = document.createElement("p");
+let title = document.createElement("p");
+let ratediv = document.createElement("div");
+let rate = document.createElement('p');
+let count = document.createElement('p');
+let btn = document.createElement('div')
+let cart = document.createElement('button')
+let buy = document.createElement('button')
+
+img.src= val.image
+title.innerHTML=val.title
+price.innerHTML = val.price
+rate.innerHTML = val.rating.rate
+rate.innerHTML = val.rating.count
+cart.innerHTML= "Add to Cart"
+buy.innerHTML= "Buy Now"
+// linkcart.href='opencart.html'
+
+
+container.append(card);
+card.append(title,img,price,ratediv,btn);
+ratediv.append(rate,count);
+btn.append(cart,buy)
+// linkcart.append(cart)
+// console.log(document);
+
+let arr = []
+cart.addEventListener('click',()=>{
+    if(window.confirm("your item is added to cart")){
+            // console.log("ok clickes")
+            console.log(cart.id)
+
+
+
+        }else {
+
+        }
+})
+
+
+
+})}
+        apicall()
+
+    </script>
+</body>
+</html>

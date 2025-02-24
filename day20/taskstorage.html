@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <!-- <label for=""></label> -->
+        <input type="text" placeholder="name">
+
+        <input type="text" placeholder="age">
+        <div>
+            <button onclick="object()">click to obj</button>
+            <a href="newpage.html">next page</a>
+        </div>
+    </div>
+
+    <script>
+        let arr = []
+        function object(){
+            let name = ēdocument.querySelectorAll('input')[0]
+            let age = document.querySelectorAll('input')[1]
+            let obj = {
+                Name : name.value,
+                Age :age.value
+            }
+            name.value = ""
+            age.value= ''
+            arr.push(obj)
+            console.log(arr)
+
+            localStorage.setItem("data", JSON.stringify(arr))
+
+            // to send data to local storage we use setItem
+            
+
+        
+            
+           
+         
+        }
+        
+
+        
+        
+        
+
+    </script>
+
+    <!--<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+  <body>
+    <div class="container" id="container"></div>
+    <script>
+      const container = document.getElementById("container");
+      let data = JSON.parse(localStorage.getItem("ProductData"));
+
+      let newdata = data.map((item) => {
+
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const img = document.createElement("img");
+        img.src = item.image;
+
+        const title = document.createElement("h4");
+        title.textContent = item.title;
+
+        const price = document.createElement("p");
+        price.textContent = item.price;
+
+        card.appendChild(img);
+        card.appendChild(title);
+        card.appendChild(price);
+        container.appendChild(card);
+      });
+    </script>
+  </body>
+</html> -->  -->
+</body>
+</html>

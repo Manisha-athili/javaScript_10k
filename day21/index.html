@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- create add to cart functionality -->
+
+    <!-- timing functions 
+        1.setInterval(callback.timing-interval) 
+        2. clearInterval()
+        3. setTimeout(callback.timing-interval) aftr time completing func excutes
+
+
+       
+        // to link  api to project we use 
+        // 1. fatch(url) : used to make an network request and returns promise
+//one way
+        // promise resolve:: .then ,.catch 
+        2. .then((data)=>{
+            return data.json()
+        })
+        3. .then((data)=>{
+            return console.log(data)
+        })
+            or
+        
+        2. .then((data)=> data.json() )
+        3. .then((data)=> console.log(data.))
+
+//2nd way ::
+        1. asyn function apicall(){
+            let a = prompt("")
+        }
+
+
+        
+    -->
+     
+
+    <script>
+        count=0
+        let a = setInterval(()=>{
+            console.log("clicked");
+            count++;
+            if(count == 5){
+                clearInterval();
+            }
+        },1000)  //1sec
+
+        let msg = ["loading...","connecting to the server...", "Done"]
+
+        async function apicall(){
+            let a = prompt("enter food name : ")
+            let maindata = await fetch();
+        }
+        
+
+
+
+
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

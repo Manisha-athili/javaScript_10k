@@ -1,0 +1,88 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+         let getval = JSON.parse(localStorage.getItem("data"));
+         const container = document.getElementById("container");
+
+         let newdata = getval.map((item) => {
+
+const card = document.createElement("div");
+card.className = "card";
+
+const img = document.createElement("img");
+img.src = item.image;
+
+const title = document.createElement("h4");
+title.textContent = item.title;
+
+const price = document.createElement("p");
+price.textContent = item.price;
+
+card.appendChild(img);
+card.appendChild(title);
+card.appendChild(price);
+container.appendChild(card);
+});
+
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container"></div> <!-- Added container -->
+
+    <script>
+        let getval = JSON.parse(localStorage.getItem("data")) || [];
+        const container = document.getElementById("container");
+
+        getval.forEach((item) => {
+            const card = document.createElement("div");
+            card.className = "card";
+
+            const img = document.createElement("img");
+            img.src = item.image;
+            img.alt = "Product Image"; // Added alt for accessibility
+
+            const title = document.createElement("h4");
+            title.textContent = item.title;
+
+            const price = document.createElement("p");
+            price.textContent = `Price: ${item.price}`;
+
+            card.appendChild(img);
+            card.appendChild(title);
+            card.appendChild(price);
+            container.appendChild(card);
+        });
+    </script>
+
+</body>
+</html>

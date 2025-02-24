@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- already data exist in local storage 
+        so we have to get that data to this page using getItem 
+    -->
+    
+    <script>
+        let getval = JSON.parse(localStorage.getItem("data"));
+        console.log(getval);
+        console.log(document);
+       
+
+        let mapData = getval.map((val)=>{
+            let div = document.createElement('div');
+            let child1 = document.createElement('div');
+            let child2 = document.createElement('div');
+            child1.innerHTML=val.Name;
+            child2.innerHTML=val.Age;
+            document.body.append(div)
+            div.append(child1,child2)
+
+        })
+        
+        
+    </script>
+</body>
+</html>

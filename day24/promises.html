@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+
+Creating promise ::
+var a = new Promise((resolve,reject)=>{})
+
+consuming promise:
+1. then, catch
+2.async await
+
+-->
+    
+    <script>
+        //  just creating pomise only .. it will not display or output
+        // var a = new Promise((res,reject)=>{
+        //     data = 0
+        //     if(data==10){
+        //         res('true, it is resolved'+data)
+        //     }
+        //     else reject('not ture'+data)
+        // })
+
+        // to display or consuming
+
+        // .then((res)=>{
+        //     console.log(res);
+        // })
+        // .catch((err)=>{
+        //     console.log(err);
+        //     alert(err)
+            
+        // })
+
+
+        // promise function
+        // function html(){
+        //     return new Promise((res)=>{
+        //         res("learn html")
+        //     })
+        // }
+        // function css(){
+        //     return new Promise((res)=>{
+        //         res("learn Css")
+        //     })
+        // }
+        // function Js(){
+        //     return new Promise((res)=>{
+        //         res("learn Js")
+        //     })
+        // }
+        // consuming promise
+        // html()
+        // .then((val)=>{
+        //     console.log(val);
+        // })
+        // css()
+        // .then((val)=>{
+        //     console.log(val);
+        // })
+        // Js()
+        // .then((val)=>{
+        //     console.log(val);
+        // })
+        // or
+        // html()
+        // .then((val)=>{
+        //     console.log(val);
+        //     return css()
+        // })
+        // .then((val)=>{
+        //     console.log(val);
+        //     return Js()
+        // })
+        // .then((val)=>{
+        //     console.log(val);
+        //    })
+        //or
+        // then catch cause code chaining to this we use async and awaite
+        // async function hello() {
+        //     let a = await html()
+        //     console.log(a)
+        //     let b = await css()
+        //     console.log(a)
+        //     let c = await js()
+        //     console.log(a)
+        // }
+
+// sum 
+function sum(val){
+    return new Promise((res)=>{
+        res(val+10)
+    })
+}
+function sub(val){
+    return new Promise((res)=>{
+        res(val-10)
+    })
+}
+function mul(val){
+    return new Promise((res)=>{
+        res(val*10)
+    })
+}
+function divi(val){
+    return new Promise((res)=>{
+        res(val/2)
+    })
+}
+sum(10)
+.then((addres)=>sub(addres))
+.then((subres)=>mul(subres))
+.then((mulres)=>divi(mulres))
+.then((divres)=>console.log(divres))
+// or using async
+async function hello(){
+    let addrev = await sum(10)
+    let subrev = await sub(addrev)
+    let mulrev = await mul(subrev)
+    let divrev =  await divi(mulrev)
+    console.log(divrev);
+}
+hello()
+
+function html(){
+    return new Promise((rev)=>{
+        setTimeout(() => {
+            rev('learning html')
+        }, 2000);
+    })
+}
+function css(){
+    return new Promise((rev)=>{
+        setTimeout(() => {
+            rev('learning Css')
+        }, 2000);
+    })
+}
+function js(){
+    return new Promise((rev)=>{
+        setTimeout(() => {
+            rev('learning Css')
+        }, 2000);
+    })
+}
+
+async function name() {
+    let html1 = await html()
+    console.log(html1);
+    let css1 = await css()
+    console.log(css1);
+    let js1 = await js()
+    console.log(js1);
+}
+name()
+
+// Promise.all([promise1,promise2,promise3])
+
+// Promise.race([promise1,promise2,promise3])
+// .then((val)=>console.log(val))
+        
+    </script>
+</body>
+</html>
