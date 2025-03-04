@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <style>
+        body {
+            width: 100%;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid #444;
+        }
+        .box {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        h1 {
+            color: #222;
+            width: 100%;
+            text-align: center;
+        }
+        .child {
+            width: 30%;
+            background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        h3 {
+            color: #333;
+        }
+        button{
+            background-color: aqua;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 20px;
+        }
+        h3{
+            display: inline;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .box {
+                flex-direction: column;
+                align-items: center;
+            }
+            .child {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box">
+            <h1>Product Management</h1>
+            <div class="child">
+                <form action="">
+                    <h3>➕ Add New Data</h3>
+                    <p>Enter ID:</p>
+                    <input type="number" placeholder="Enter Product ID">   
+                    <p>Enter Name:</p>
+                    <input type="text" placeholder="Enter Product Name">
+                    <p>Enter Price:</p>
+                    <input type="text" placeholder="Enter Product Price">
+                    <p>Enter Stock:</p>
+                    <input type="text" placeholder="Enter Product Stock">
+                </form>
+            </div>
+            <div class="child">
+                <form action="">
+                    <h3>🔄 Update Data</h3>
+                    <p>Enter ID:</p>
+                    <input type="text" placeholder="Enter Product ID">   
+                    <p>Enter Name:</p>
+                    <input type="text" placeholder="Enter Product Name">
+                    <p>Enter Price:</p>
+                    <input type="text" placeholder="Enter Product Price">
+                    <p>Enter Stock:</p>
+                    <input type="text" placeholder="Enter Product Stock">
+                </form>
+            </div>
+            <div class="child">
+                <form action="">
+                    <h3>❌ Delete Data</h3>
+                    <p>Enter ID:</p>
+                    <input type="text" placeholder="Enter Product ID">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

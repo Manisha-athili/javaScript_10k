@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    this keyword:
+    global :window
+    function: window
+    obj function: obj
+    obj funtion-arrow function: window
+    addeventlistener function : element
+
+    how to maniplate this :
+    3 ways:
+    1. call 
+    2. apply 
+    3. bind
+
+
+    call passe arguments individually
+    apply experts an array of argus
+
+    use call when u know how many arguments to pass
+
+    constructor ::
+
+
+    -->
+    
+    <script>
+
+        console.log(this);
+        
+        function hello(){
+            console.log(this);   
+        }
+
+        let obj={
+            name:"manisha",
+            age:"22"
+        }
+        function hi(){
+            console.log(this);
+            
+        }
+        hi.call(obj,"hello","world") // call
+
+        function here(){
+            console.log(this);
+            
+        }
+        hi.apply(obj,["hello","world"]) // apply
+
+        function here(){
+            console.log(this);
+            
+        }
+        a = hi.bind(obj,["hello","world"]) // bind
+        a()
+
+// constructor: 
+
+function person(){
+    
+}
+
+
+
+
+        
+    </script>
+</body>
+</html>

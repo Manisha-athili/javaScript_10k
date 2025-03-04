@@ -1,6 +1,6 @@
 // variable : container to store data (any datatype)
 // decleared with keyvar, let, const and automatic varible (js not supported in strict js) followed by varibles name (identifiers)
-// `${}`==> string inter position
+// `${}`==> string interpolation
 
 var name = "10k coders";
 console.log(name);
@@ -11,6 +11,9 @@ console.log(name);
 
 var a ;  // declaration
 a = 10;  // initialization
+
+console.log("this is ", a);
+console.log(`this is  ${a}`);
 
 var a = 20;   //assignment
     a = 30;  // reassignment
@@ -37,13 +40,18 @@ console.log(a);
  b = 20;
  console.log(b); //  automatic varibles
 
- c = 10;  // c undefined not error 
+//  c = 10;  // c undefined not error 
  console.log(c); 
  var c;  
  
 // d = 10;  
 //  console.log(d); 
-//  let d; // error
+//  let d; // error error dont perform hosting
+
+
+// console.log(h);
+// const h ='hi' error dont perform hosting
+
  
  /*
  datatypes :: 
@@ -56,11 +64,11 @@ Primitive datatypes :
  --call by valuse and pase by value
  --immutable
 
- 1)numder: 1, 2.0, 
+ 1)numder: 1, 2.0, 234567 
  2)string:"",'',``
  3)undefined: varible without value
  4)null: empty value (mathimaticall operations are performed)
- 5)boolean : Ture or false
+ 5)boolean : ture or false
 
 
  non primitive datatypes consicutive :
@@ -72,6 +80,8 @@ Primitive datatypes :
  1) array:: collection of hetrogenous data
  2) object:: d
  3) functions::
+ 4)regex
+ 5) date
 
  */
 console.log("---------")
@@ -93,7 +103,7 @@ console.log(b.name,b.id,b.batchno);
 console.log(typeof(a))
 console.log(typeof(b));
 
-var name = "code";
+var name = "codee";
 console.log(typeof(name));
 
 

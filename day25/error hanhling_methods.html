@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    EROor handling methods in javaScript:
+    1. try{}
+    2.catch(){}
+    3.finally
+
+    HTTP data :
+    1. get: to get data
+    2. post: 
+    3.put :
+    4. patch:
+    5. delet :
+
+    Api : it is collection of communication protocols used by various
+
+    Types of API ::
+    1. Broswer Api
+    2. Server API (rest api)
+    3. third - party api
+
+    we are using Reast api ::
+    r design to make server side data readily available by reprasenting. in formate like json and xml
+
+    SOAP API : uses xml
+
+
+
+
+
+    
+    <script>
+        console.log('first');
+        try{
+            consolelog('secod');
+            
+        }catch(err){  // catch is mandatary in try and catch in js error handling methods
+            console.log(err);
+            console.log("this is error");
+        }
+        finally{
+            console.log('Third');
+        }
+        // throw statement is error created by developer
+        console.log("throw");
+        
+        num= -10
+        try{
+            if(num<0){
+                throw new Error("Error : the number must be positive")
+            }
+        }
+        catch(err){
+                console.error(err);
+                console.log(err);
+                
+            }
+
+            //eval(alert("hi"))// not a error but missuse
+        
+        async function name() {
+            const api = await fetch('https://fakestoreapi.com/products/1') //response 
+            const data = await api.json() //data in json fromate
+            console.log(api);
+            console.log(data)
+        }
+        name()
+
+        // http methods:
+
+        
+    </script>
+</body>
+</html>

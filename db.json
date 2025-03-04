@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "Name": "manisha",
+      "Price": "hello",
+      "Stock": "2ooo"
+    },
+    {
+      "id": "2",
+      "Name": "",
+      "Price": "",
+      "Stock": ""
+    },
+    {
+      "id": "3",
+      "Name": "",
+      "Price": "",
+      "Stock": ""
+    },
+    {
+      "id": "5",
+      "Name": "sai",
+      "Price": "good",
+      "Stock": "400"
+    },
+    {
+      "id": 7,
+      "Name": "",
+      "Price": "",
+      "Stock": ""
+    }
+  ]
+}
