@@ -82,7 +82,8 @@ price3.innerHTML="<h3>Price: </h3> - "
 stock3.innerHTML="<h3>Stock: </h3> - "
 
 
-
+// rest  re presentational State .
+// rest -- > http (get post patch delect) => 
 
 
 
@@ -102,6 +103,7 @@ async function addData(e){
     }
 
     
+    // fetch("url",{obj}) => obj=1. method:"post, put,patch, get, delect",headers:{},body
 
     let apiRespond = await fetch('http://localhost:3000/products',{
         method:"POST",
@@ -117,7 +119,7 @@ async function addData(e){
     inp4.value=""
     
 }
-let toupdate = {
+let toUpdate = {
         id :  inp5.value,
         Name : inp6.value,
         Price: inp7.value,
@@ -135,7 +137,7 @@ async function update(e) {
         headers:{
             "content-type":"Application/json"
         },
-        body:JSON.stringify(toupdate)
+        body:JSON.stringify(toUpdate)
     })   
 }
 

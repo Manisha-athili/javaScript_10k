@@ -32,9 +32,6 @@
 </head>
 <body>
 
-    
-    
-
     <script>
         let body = document.body
         let container = document.createElement('div');
@@ -49,10 +46,14 @@ linkcart.href='opencart.html'
         
         async function apicall(){
 
+            // async() => {}
+
             let apiData = await fetch("https://fakestoreapi.com/products");
-            let final = await apiData.json();
+            let final =  await apiData.json();
             console.log(final);
             localStorage.setItem("data", JSON.stringify(final))
+            // console.log(apiData);
+            
 
             
 
@@ -70,7 +71,8 @@ let btn = document.createElement('div')
 let cart = document.createElement('button')
 let buy = document.createElement('button')
 
-img.src= val.image
+// . []
+img.src= val.image 
 title.innerHTML=val.title
 price.innerHTML = val.price
 rate.innerHTML = val.rating.rate

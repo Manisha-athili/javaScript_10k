@@ -61,6 +61,9 @@ container.appendChild(card);
 
     <script>
         let getval = JSON.parse(localStorage.getItem("data")) || [];
+        // console.log(localStorage.getItem("data"));
+        
+        // console.log(getval)
         const container = document.getElementById("container");
 
         getval.forEach((item) => {

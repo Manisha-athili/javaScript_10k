@@ -18,8 +18,9 @@ console.log(`this is  ${a}`);
 var a = 20;   //assignment
     a = 30;  // reassignment
 
-var a = 20;
-var a = 30;  // redeclaration of a 
+var b 
+b = 20; // declartion
+var b = 30;  // redeclaration of a 
 
 // undefined :: a variable without a value (it is not error)
 // not defined :: a varable is not defined (it is error js stops excuting)
