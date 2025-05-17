@@ -9,7 +9,7 @@
 
 
     <!-- 
-    function declaration/ defination ::::
+    function declaration/ defination :::: reusable block of code to mainatain the code readability....
     function functionName(a,b,parameters) {   parameters
      sum = a+b;
       return sum;
@@ -22,7 +22,7 @@
      1. function name stores function declaration/defination.
      2. function ( ) calls the function = out.
      3. logging the function calling prints the return value.
-     4. statements after return value will not return.
+     4. statements after return value will not excute.
      5. named functions can only hosted.
      6. in js functions are first class fuvtion:: that means functions can be assigned to a varibles
 
@@ -32,6 +32,7 @@
 
    
       --> 
+
      <script>
         // funtions ;;
         function sum(a,b){
@@ -45,7 +46,10 @@
                 }
             console.log(a(2,3));
 
+        // a = 3
+
         // arrow functions  ----> { } , ( ), return, funtion keyword
+        // () => 
         var fun = () => {
             return "This is Arrow function"
         }
@@ -100,22 +104,21 @@
 
         one(two);
 
-        function products(a){
+        function products(payment){
             console.log("Products added to cart");
-            a(order);
-            
+            payment(order); 
         }
-
         function payment(order){
             console.log("Payment completed");
             order();
         }
-
         function order(){
             console.log("order placed");
         }
-
         products(payment)
+        // "Products added to cart" 
+        // "Payment completed"
+        // order placed
 
 
         // higher-order function :: takes one or more fuctions as arguments or results a function as its result.

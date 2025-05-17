@@ -104,7 +104,7 @@ async function addData(e){
 
     
     // fetch("url",{obj}) => obj=1. method:"post, put,patch, get, delect",headers:{},body
-
+    // http://localhost:3000/recipes
     let apiRespond = await fetch('http://localhost:3000/products',{
         method:"POST",
         headers:{
